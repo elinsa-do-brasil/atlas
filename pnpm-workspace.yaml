@@ -1,0 +1,7 @@
+allowBuilds:
+  esbuild: true
+  sharp: true
+minimumReleaseAgeExclude:
+  - fumadocs-ui@16.13.0
+  - fumadocs-core@16.13.0
+  - lucide-react@1.30.0

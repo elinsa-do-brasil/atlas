@@ -1,0 +1,46 @@
+{
+  "name": "docs",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start",
+    "types:check": "fumadocs-mdx && next typegen && tsc --noEmit",
+    "postinstall": "fumadocs-mdx",
+    "lint": "biome check",
+    "format": "biome format --write",
+    "check": "biome check --write"
+  },
+  "dependencies": {
+    "@fuma-translate/react": "^1.0.2",
+    "@fumadocs/language": "^0.2.2",
+    "@radix-ui/react-popover": "^1.1.23",
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
+    "class-variance-authority": "^0.7.1",
+    "cnfast": "^0.1.0",
+    "fumadocs-core": "16.14.1",
+    "fumadocs-mdx": "15.2.2",
+    "fumadocs-ui": "16.14.1",
+    "lucide-react": "^1.30.0",
+    "next": "16.3.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-icons": "^5.7.0",
+    "tailwind-merge": "^3.6.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.7",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/mdx": "^2.0.14",
+    "@types/node": "^25.9.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "postcss": "^8.5.26",
+    "react-medium-image-zoom": "^5.4.8",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3"
+  },
+  "packageManager": "pnpm@11.17.0+sha512.cca3cea332ad254bb84145f966d19f4879615210346fc92c79a047f23a0d7b3cca3c3792f0076ba1f1831d277efbcf0a9119b31a9a60eca7fb3d6231f331ef72"
+}
