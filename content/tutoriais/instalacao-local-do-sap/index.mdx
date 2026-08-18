@@ -1,64 +1,37 @@
 ---
 title: Instalação local do SAP
-description: Políticas, guias e orientações internas para consultar regras, padrões e canais de apoio da Elinsa.
+description: Passo a passo para criar o usuário local, instalar o SAP GUI e configurar a conexão com o servidor.
 ---
 
-import { MonitorCog, Scale } from "lucide-react";
-
-Use esta documentação para encontrar políticas, guias e orientações da Elinsa em linguagem direta. As páginas reúnem regras internas, padrões de trabalho e caminhos para pedir apoio quando algo precisar ser esclarecido.
-
-## Assuntos
-
-<Cards>
-  <Card
-    title="Ética e conduta"
-    href="/etica"
-    icon={<Scale />}
-    description="Código de Conduta, Canal de Denúncias e orientações para agir com integridade."
-  />
-  <Card
-    title="Tecnologia"
-    href="/tecnologia"
-    icon={<MonitorCog />}
-    description="Políticas de acesso, segurança de contas e padrões para soluções digitais."
-  />
-</Cards>
+A instalação do SAP em uma máquina local tem três etapas: criar um usuário local no Windows, instalar o SAP GUI e configurar a conexão com o servidor.
 
 ---
 
-## Guia de Instalação e Configuração Local do SAP
+## 1. Criação do usuário local
 
-Este tutorial apresenta um passo a passo detalhado para realizar a instalação e a configuração inicial do SAP GUI em sua máquina local. O processo é dividido em três etapas principais: criação de um usuário local, instalação do software e configuração do ambiente.
+Esse usuário é o que você vai usar para abrir o SAP no fim do tutorial.
 
-Siga atentamente as instruções abaixo para garantir que o sistema funcione corretamente.
-
----
-
-### 1. Criação do Usuário Local
-
-O primeiro passo é criar um usuário local no seu computador. Esse usuário será utilizado posteriormente para acessar o ambiente configurado.
-
-1. Abra o **Prompt de Comando (Terminal)** ou o **PowerShell**. É obrigatório executá-lo como **Administrador**.
+1. Abra o **Prompt de Comando** ou o **PowerShell**. É obrigatório executar como **administrador**.
 2. Digite o comando abaixo e pressione `Enter`:
 
 ```
 net user NomeDoUsuario Senha /add
 ```
 
-<Callout type="warning" title="Atenção:">
+<Callout type="warning" title="Atenção">
+
 * Substitua `NomeDoUsuario` pela **credencial da Equatorial** do colaborador.
-* Substitua `Senha` por uma senha de sua preferência (pode ser uma senha simples, apenas para este acesso local).
+* Substitua `Senha` por uma senha de sua preferência. Ela vale apenas para este acesso local, então pode ser simples.
 
 </Callout>
 
 ---
 
-### 2. Extração e Instalação do SAP
+## 2. Extração e instalação do SAP
 
-Com o usuário criado, agora vamos extrair os arquivos do instalador e prosseguir com a instalação do SAP Logon.
+1. Localize o arquivo compactado `sap.tar`.
+2. Extraia o conteúdo dele.
 
-1. Localize o arquivo compactado chamado `sap.tar`.
-2. Extraia o conteúdo deste arquivo.
 <div className="flex justify-center my-5">
 
 ![Extraindo o arquivo sap.tar](./Imagens/01.png)
@@ -66,7 +39,8 @@ Com o usuário criado, agora vamos extrair os arquivos do instalador e prossegui
 </div>
 
 <Callout type="info" title="Dica para usuários do Windows 10">
-Caso você tenha dificuldades para extrair arquivos `.tar` nativamente, recomendamos a utilização do aplicativo **NanoZip**, que pode ser baixado gratuitamente na Microsoft Store.
+
+Se o Windows não extrair arquivos `.tar` nativamente, instale o **NanoZip**, que é gratuito na Microsoft Store.
 
 </Callout>
 
@@ -76,15 +50,16 @@ Caso você tenha dificuldades para extrair arquivos `.tar` nativamente, recomend
 
 </div>
 
-3. Após a extração, navegue pelas pastas seguindo exatamente este caminho:
+3. Depois de extrair, navegue até a pasta `Win64`, seguindo este caminho:
    `SAP_GUI_for_Windows_8.00_Comp._1_` > `PRES1` > `GUI` > `Windows` > `Win64`
 
-  Caminho copiável:
+Caminho completo para copiar:
+
 ```
 \SAP\SAP_GUI_for_Windows_8.00_Comp._1_\PRES1\GUI\Windows\Win64
 ```
 
-4. Dentro da pasta `Win64`, localize o arquivo executável **`SetupAll.exe`**.
+4. Dentro da pasta `Win64`, localize o executável `SetupAll.exe`.
 5. Clique com o botão direito sobre ele e selecione **Executar como administrador**.
 
 <div className="flex justify-center my-5">
@@ -93,7 +68,7 @@ Caso você tenha dificuldades para extrair arquivos `.tar` nativamente, recomend
 
 </div>
 
-6. O assistente de instalação será aberto. Na tela de seleção de componentes, **marque todas as caixinhas, exceto a última**.
+6. O assistente de instalação abre. Na tela de seleção de componentes, marque todas as caixas, **exceto a última**.
 
 <div className="max-w-[450px] mx-auto my-5">
 
@@ -101,8 +76,8 @@ Caso você tenha dificuldades para extrair arquivos `.tar` nativamente, recomend
 
 </div>
 
-7. Clique em **"Next"** (Avançar) em todas as telas subsequentes até que o processo de instalação seja concluído.
-8. Assim que a instalação finalizar, procure pelo aplicativo **SAP Logon 64** no menu Iniciar do seu computador e abra-o.
+7. Clique em **Next** (Avançar) nas telas seguintes até a instalação terminar.
+8. Terminada a instalação, procure por **SAP Logon 64** no menu Iniciar e abra o programa.
 
 <div className="flex justify-center my-5">
 
@@ -112,14 +87,14 @@ Caso você tenha dificuldades para extrair arquivos `.tar` nativamente, recomend
 
 ---
 
-### 3. Configuração do SAP Local
+## 3. Configuração do SAP local
 
-A última etapa consiste em configurar a conexão do SAP Logon para acessar o servidor da empresa.
+Falta apontar o SAP Logon para o servidor da empresa.
 
-1. **Deslogue** do seu usuário atual do Windows.
-2. Faça login na máquina utilizando o **novo usuário** que você criou no *Passo 1*.
-3. Já no novo usuário, abra novamente o **SAP Logon 64**.
-4. No canto superior esquerdo da tela do programa, clique no ícone de "Arquivo" (ou menu de opções) e selecione a opção **Conexão**.
+1. Saia do seu usuário atual do Windows.
+2. Faça login na máquina com o **novo usuário** que você criou no passo 1.
+3. Já no novo usuário, abra o **SAP Logon 64**.
+4. No canto superior esquerdo da janela, clique no ícone de **Arquivo** e selecione **Conexão**.
 
 <div className="flex justify-center my-5">
 
@@ -127,7 +102,7 @@ A última etapa consiste em configurar a conexão do SAP Logon para acessar o se
 
 </div>
 
-5. Uma nova janela de criação de sistema será exibida. Clique no botão **Continuar**.
+5. Na janela de criação de sistema que abrir, clique em **Continuar**.
 
 <div className="max-w-[450px] mx-auto my-5">
 
@@ -135,12 +110,12 @@ A última etapa consiste em configurar a conexão do SAP Logon para acessar o se
 
 </div>
 
-6. Agora, preencha os campos exatamente com as informações abaixo:
+6. Preencha os campos exatamente com estas informações:
 
    * **Descrição:** `#913 Equatorial - PRD - ECC`
    * **ID Sist.:** `PRD`
    * **Número da Instância:** `00`
-   * **Cadeia de SAProuter:** *(Deixe este campo totalmente vazio)*
+   * **Cadeia de SAProuter:** *(deixe o campo vazio)*
    * **Servidor de Aplicação:** `10.1.1.145`
 
 <div className="max-w-[450px] mx-auto my-5">
@@ -149,8 +124,8 @@ A última etapa consiste em configurar a conexão do SAP Logon para acessar o se
 
 </div>
 
-7. Clique em **Continuar** nas próximas telas até que a janela de configuração se feche. Agora, a conexão com o SAP já está configurada!
-8. Na tela inicial do SAP Logon, dê **dois cliques** na primeira linha da planilha (a conexão que você acabou de criar).
+7. Clique em **Continuar** nas telas seguintes até a janela de configuração fechar.
+8. Na tela inicial do SAP Logon, dê **dois cliques** na conexão que você acabou de criar, na primeira linha da lista.
 
 <div className="flex justify-center my-5">
 
@@ -158,7 +133,7 @@ A última etapa consiste em configurar a conexão do SAP Logon para acessar o se
 
 </div>
 
-9. A janela padrão de login do sistema SAP deverá aparecer na sua tela.
+9. A tela de login do SAP deve aparecer.
 
 <div className="max-w-[450px] mx-auto my-5">
 
@@ -166,4 +141,4 @@ A última etapa consiste em configurar a conexão do SAP Logon para acessar o se
 
 </div>
 
-🎉 **Pronto!** Se você chegou até a tela de login, significa que o serviço foi concluído com sucesso e o SAP está perfeitamente configurado na máquina.
+Se a tela de login apareceu, a configuração está concluída e o SAP já pode ser usado na máquina.
