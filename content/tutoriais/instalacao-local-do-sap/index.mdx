@@ -11,10 +11,10 @@ A instalação do SAP em uma máquina local tem três etapas: criar um usuário 
 
 Esse usuário é o que você vai usar para abrir o SAP no fim do tutorial.
 
-1. Abra o **Prompt de Comando** ou o **PowerShell**. É obrigatório executar como **administrador**.
+1. Abra o **Prompt de Comando**. É obrigatório executar como **administrador**.
 2. Digite o comando abaixo e pressione `Enter`:
 
-```
+```cmd
 net user NomeDoUsuario Senha /add
 ```
 
@@ -33,7 +33,7 @@ net user NomeDoUsuario Senha /add
 
 ## 2. Extração e instalação do SAP
 
-1. Localize o arquivo compactado `sap.tar`.
+1. Localize o arquivo compactado **sap.tar**.
 2. Extraia o conteúdo dele.
 
 <div className="flex justify-center my-5">
@@ -44,24 +44,16 @@ net user NomeDoUsuario Senha /add
 
 <Callout type="info" title="Dica para usuários do Windows 10">
 
-Se o Windows não extrair arquivos `.tar` nativamente, instale o **NanoZip**, que é gratuito na Microsoft Store.
-
-</Callout>
-
-<div className="flex justify-center my-5">
+Se o Windows não extrair arquivos `.tar` nativamente, instale o **NanoZip**, que é gratuito na [Microsoft Store](https://apps.microsoft.com/detail/9n8g7tscl18r?hl=pt-BR&gl=BR).
 
 ![Aplicativo NanoZip na Microsoft Store](./Imagens/02.png)
+</Callout>
 
-</div>
+
+
 
 3. Depois de extrair, navegue até a pasta `Win64`, seguindo este caminho:
    `SAP_GUI_for_Windows_8.00_Comp._1_` > `PRES1` > `GUI` > `Windows` > `Win64`
-
-Caminho completo para copiar:
-
-```
-\SAP\SAP_GUI_for_Windows_8.00_Comp._1_\PRES1\GUI\Windows\Win64
-```
 
 4. Dentro da pasta `Win64`, localize o executável `SetupAll.exe`.
 5. Clique com o botão direito sobre ele e selecione **Executar como administrador**.
