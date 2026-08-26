@@ -492,26 +492,39 @@ Quem identificar conteúdo dessa natureza comunica imediatamente o canal do item
 
 **19.2.** O registro informa finalidade, dados tratados, responsável técnico, responsável de negócio e local de hospedagem.
 
-**19.3.** São requisitos mínimos:
+**19.3.** São requisitos de base, aplicáveis a todo sistema registrado, qualquer que seja a classificação da informação tratada:
 
-- **a)** revisão de segurança prévia ao tratamento de informação confidencial ou restrita;
-- **b)** proibição de credenciais, tokens, chaves, strings de conexão e dados pessoais gravados diretamente no código-fonte;
-- **c)** código-fonte em repositório corporativo sob controle da TI, com histórico de versões, vedada a guarda em repositório ou conta pessoal;
-- **d)** ao menos duas pessoas com acesso e conhecimento suficientes para manter o sistema, além da TI, e documentação que permita a sucessão;
-- **e)** componentes e bibliotecas suportados, com verificação de dependências e licenças, exigindo componente descontinuado justificativa e plano de substituição;
-- **f)** dados hospedados em infraestrutura aprovada pela TI, vedadas cópias em serviços pessoais de nuvem;
-- **g)** autenticação integrada ao diretório corporativo sempre que tecnicamente viável.
+- **a)** código-fonte versionado em repositório da organização `elinsa-do-brasil` no GitHub corporativo, vedada a guarda em repositório ou conta pessoal;
+- **b)** banco de dados e demais dados hospedados em infraestrutura mantida pela empresa, vedadas cópias em serviços pessoais de nuvem;
+- **c)** proibição de credenciais, tokens, chaves, strings de conexão e dados pessoais gravados diretamente no código-fonte;
+- **d)** documentação que descreva a finalidade do sistema, a tecnologia empregada, como operá-lo, de onde ele lê e onde grava, suficiente para que outra pessoa o localize, o utilize e o interrompa;
+- **e)** verificação de segurança, manual ou automatizada, antes da entrada em uso e a cada alteração relevante.
 
-**19.4.** Código produzido com auxílio de IA é tratado como código de autoria de quem o incorporou ao sistema, que responde por ele perante a empresa. Trecho que o responsável não consiga explicar não entra em sistema que trate informação confidencial ou restrita.
+**19.4.** Tratando o sistema informação confidencial ou restrita, aplicam-se adicionalmente:
 
-**19.5.** Sistemas em uso na data de aprovação desta política são registrados no prazo de `[definir prazo]`, para inventário e avaliação de risco. O registro no prazo não gera medida disciplinar.
+- **a)** revisão de segurança conduzida por pessoa distinta de quem desenvolveu o sistema, com registro das pendências identificadas e do tratamento dado a cada uma;
+- **b)** ao menos duas pessoas com acesso e conhecimento suficientes para manter o sistema, além da TI, e documentação que permita a sucessão;
+- **c)** componentes e bibliotecas suportados, com verificação de dependências e licenças, exigindo componente descontinuado justificativa e plano de substituição;
+- **d)** autenticação integrada ao diretório corporativo sempre que tecnicamente viável.
 
-**19.6.** Identificado risco relevante, o Comitê fixa prazo de correção, migração ou desativação, considerada a importância do sistema para a operação.
+**19.5.** Código produzido com auxílio de IA é tratado como código de autoria de quem o incorporou ao sistema, que responde por ele perante a empresa. Trecho que o responsável não consiga explicar não entra em sistema que trate informação confidencial ou restrita, salvo se aprovado na revisão do item 19.4, a, com as pendências tratadas. A ressalva alcança o risco de segurança, e não o de manutenção, que permanece endereçado pelo item 19.4, b.
+
+**19.6.** Sistemas em uso na data de aprovação desta política são registrados no prazo de `[definir prazo]`, para inventário e avaliação de risco. O registro no prazo não gera medida disciplinar. Atendidos os requisitos de base, o sistema permanece em uso enquanto o Comitê avalia a exigibilidade dos requisitos do item 19.4.
+
+**19.7.** Identificado risco relevante, o Comitê fixa prazo de correção, migração ou desativação, considerada a importância do sistema para a operação. A desativação é a última alternativa, cabível quando a correção não for viável em prazo compatível com o risco.
+
+**19.8.** Compete à Tecnologia da Informação apoiar a área usuária na migração do código para o repositório da organização, na hospedagem dos dados e na execução da verificação prevista no item 19.3, e. A falta de conhecimento técnico para cumprir esses requisitos não dispensa o registro do sistema nem justifica mantê-lo fora dele.
 
 <Callout type="info" title="Fundamento">
-**[INTERNO]** O registro prévio junto à TI e os requisitos do item 19.3 são controle de engenharia da Elinsa e alcançam sistemas que não tratam dado pessoal algum. Nenhuma norma exige esse registro. A regra do item 19.4 é atribuição interna de responsabilidade técnica: define quem responde pelo código perante a empresa e não decide questão de titularidade de direitos autorais, tratada no item 21.3.
+**[INTERNO]** O registro prévio junto à TI e os requisitos dos itens 19.3 e 19.4 são controle de engenharia da Elinsa, alcançam sistemas que não tratam dado pessoal algum e não decorrem de norma alguma. A separação entre requisitos de base e requisitos adicionais aplica a proporcionalidade ao risco do item 4.1, g, e a prerrogativa que o item 5.8 dá ao Comitê de diferenciar controle por caso de uso.
 
-**[LEGAL]** Quando o sistema tratar dados pessoais, aplicam-se a LGPD, art. 49, que exige que os sistemas sejam estruturados de forma a atender aos requisitos de segurança e aos padrões de boas práticas e governança; o art. 46, § 2º, que impõe a observância dessas medidas desde a concepção até a execução; e o art. 37, que obriga à manutenção de registro das operações de tratamento.
+**[INTERNO]** O objetivo do item 19.3 é trazer para um repositório, uma hospedagem e uma verificação conhecidos aquilo que já existe e funciona, e não interromper o que funciona. Condicionar a continuidade desses sistemas a dois mantenedores plenamente capazes seria exigir o que raramente existe: quem recorre a IA para construir a ferramenta o faz, quase sempre, por não deter o conhecimento técnico para construí-la de outro modo. O custo da escolha é a dependência de uma pessoa só. Ele é assumido conscientemente e limitado pelo item 19.3, d, que exige documentação suficiente para que outra pessoa opere e interrompa o sistema. A exigência plena de sucessão volta no item 19.4 assim que o sistema passa a tratar informação confidencial ou restrita.
+
+**[INTERNO]** A ressalva do item 19.5 trata a verificação de segurança e a compreensão do código como formas alternativas, e não cumulativas, de reduzir o mesmo risco: código revisado e com pendências tratadas não é menos seguro por não ter sido escrito nem plenamente compreendido por quem o incorporou. A atribuição de autoria no mesmo item define quem responde pelo código perante a empresa e não decide titularidade de direitos autorais, tratada no item 21.3.
+
+**[INTERNO]** O apoio do item 19.8 é o que torna os demais requisitos exigíveis. Pedir repositório corporativo, hospedagem aprovada e verificação de segurança a quem recorreu a IA justamente por não ter conhecimento técnico, sem oferecer ajuda para cumpri-los, produziria o efeito que o item 4.1, i, procura evitar: o sistema deixa de ser declarado, e não deixa de existir.
+
+**[LEGAL]** Tratando o sistema dados pessoais, permanecem aplicáveis a LGPD, art. 49 (estruturação segundo os requisitos de segurança e os padrões de boas práticas e governança), art. 46, § 2º (observância das medidas desde a concepção até a execução) e art. 37 (registro das operações de tratamento). A distinção entre requisitos de base e adicionais organiza controles internos e não dispensa nenhuma dessas obrigações.
 </Callout>
 
 ### 20. Atividades operacionais e de rede elétrica
@@ -666,7 +679,7 @@ Nenhuma delas é sanção aplicável ao colaborador. A medida cabível a quem de
 
 **26.4.** Encerrada a janela, o Comitê define, para cada item declarado, a homologação, a substituição ou a desativação, com prazo compatível com a importância da atividade atendida.
 
-**26.5.** Os sistemas de que trata o item 19.5 são declarados nesta mesma janela.
+**26.5.** Os sistemas de que trata o item 19.6 são declarados nesta mesma janela.
 
 **26.6.** A janela de regularização não alcança condutas que configurem ilícito civil ou penal, nem afasta obrigações legais de comunicação de incidente já ocorrido.
 
@@ -740,7 +753,7 @@ Este anexo apoia a capacitação prevista no item 25.3. Os exemplos são ilustra
 
 ## Anexo D. Registro de alterações da versão 0.6
 
-Esta versão corrige a fundamentação jurídica da versão 0.5. **Nenhuma regra de conduta foi flexibilizada.** O que mudou foi a atribuição correta de cada regra à sua origem — lei, orientação regulatória, referência internacional ou decisão da empresa.
+Esta versão corrige a fundamentação jurídica da versão 0.5 e reorganiza o item 19. Fora dessa reorganização, **nenhuma regra de conduta foi flexibilizada**: o que mudou foi a atribuição correta de cada regra à sua origem — lei, orientação regulatória, referência internacional ou decisão da empresa.
 
 | Item | O que mudou |
 | --- | --- |
@@ -759,6 +772,7 @@ Esta versão corrige a fundamentação jurídica da versão 0.5. **Nenhuma regra
 | 13.5 e 13.6 | O direito de eliminação passa a ser qualificado ("quando cabível"), com as ressalvas do art. 16 da LGPD e o dever de resposta fundamentada |
 | 14.2 e 14.4 | A autorização do contratante deixa de ser apresentada como exigência legal geral e passa a decorrer do contrato ou da consulta prévia quando ele for silente |
 | 16.5 | A autorização de admissão deixa de ser declarada inservível para IA em qualquer hipótese; passa a ser insuficiente quando não abranger claramente essa finalidade |
+| 19 | **Reorganizado.** A lista única de requisitos mínimos da v0.5 passa a ter dois níveis: requisitos de base do item 19.3, exigíveis de todo sistema (repositório `elinsa-do-brasil`, hospedagem mantida pela empresa, ausência de segredos no código, documentação de uso e verificação de segurança manual ou automatizada), e requisitos adicionais do item 19.4, exigíveis quando o sistema tratar informação confidencial ou restrita (revisão por terceiro, dois mantenedores e sucessão, dependências e licenças, autenticação no diretório). O item 19.5 passa a admitir a revisão de segurança como alternativa à compreensão integral do código. Os itens 19.6 a 19.8 são novos ou ampliados: permanência em uso durante a avaliação do Comitê, desativação como última alternativa e dever de a TI apoiar a área usuária no cumprimento dos requisitos |
 | 17.1 | Fundamento penal do ECA (art. 241-C e correlatos) passa a ser a base principal. A Lei nº 15.211/2025 é mantida com a ressalva de que seus deveres se dirigem a provedores |
 | 20 | Acrescentada a NR-10 como norma efetivamente aplicável, ao lado do EU AI Act como referência |
 | 22.2 | O prazo de resposta do Comitê é qualificado como prazo-alvo de gestão |
