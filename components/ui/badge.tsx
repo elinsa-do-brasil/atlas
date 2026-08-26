@@ -18,13 +18,13 @@ const badgeVariants = cva(
           "hover:bg-muted hover:text-muted-foreground dark:hover:bg-muted/50",
         link: "text-primary underline-offset-4 hover:underline",
         legal:
-          "bg-blue-500/10 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400",
+          "bg-red-500/10 text-red-700 dark:bg-red-500/20 dark:text-red-400",
         regulatorio:
           "bg-teal-500/10 text-teal-700 dark:bg-teal-500/20 dark:text-teal-400",
         referencia:
-          "bg-slate-500/10 text-slate-700 dark:bg-slate-500/20 dark:text-slate-300",
+          "bg-yellow-500/10 text-yellow-700 dark:bg-yellow-500/20 dark:text-yellow-300",
         interno:
-          "bg-violet-500/10 text-violet-700 dark:bg-violet-500/20 dark:text-violet-400",
+          "bg-blue-500/10 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400",
       },
     },
     defaultVariants: {
