@@ -1,0 +1,589 @@
+---
+title: Política de Uso de Inteligência Artificial
+description: PIA-01 — regras da Elinsa para uso de sistemas de IA sobre informações da empresa, de colaboradores, contratantes e terceiros.
+---
+
+Esta política (PIA-01) define quais ambientes de Inteligência Artificial podem processar quais informações da Elinsa, sob quais condições e sob responsabilidade de quem. Ela não proíbe o uso de IA no trabalho.
+
+<Callout type="warning" title="Documento em avaliação">
+Versão 0.5, emitida em 24 de agosto de 2026, ainda como **proposta para avaliação**. Trechos entre colchetes, como `[definir prazo]` ou `[definir canal]`, marcam pontos que dependem de definição final antes da aprovação pela Diretoria.
+</Callout>
+
+## Título I. Disposições gerais
+
+### 1. Objeto
+
+**1.1.** Esta política estabelece as regras de uso de sistemas de Inteligência Artificial sobre informações da Elinsa, de seus colaboradores, de seus contratantes e de terceiros.
+
+**1.2.** Esta política não proíbe o uso de Inteligência Artificial. Define quais ambientes de IA podem processar quais informações, sob quais condições e sob responsabilidade de quem.
+
+**1.3.** O descumprimento desta política sujeita o infrator às medidas do item 24.
+
+<Callout type="info" title="Fundamento">
+LGPD, art. 50, § 2º, I. A adoção de programa de governança em privacidade, com políticas internas que demonstrem o comprometimento da empresa e sejam adaptadas à escala e ao volume de suas operações, é medida expressamente prevista em lei e considerada pela ANPD na dosimetria de eventuais sanções (art. 52, § 1º, IX). O relatório *Cost of a Data Breach 2025*, da IBM, registra que uma em cada cinco organizações pesquisadas sofreu violação ligada a uso não homologado de IA, com custo adicional aproximado de US$ 670 mil por incidente, e que 97% das organizações com incidente relacionado a IA não dispunham de controle de acesso adequado.
+</Callout>
+
+### 2. Âmbito de aplicação
+
+**2.1.** Sujeitam-se a esta política colaboradores, estagiários, aprendizes, prestadores de serviço, terceirizados, coordenadores, gerentes e membros da Diretoria.
+
+**2.2.** Esta política alcança qualquer sistema de IA, generativo ou agêntico, nas seguintes hipóteses:
+
+- **a)** contratado pela Elinsa;
+- **b)** embutido em produtos e serviços já utilizados pela empresa;
+- **c)** utilizado a partir de conta pessoal ou assinatura individual de colaborador;
+- **d)** empregado na geração de código ou no desenvolvimento de sistemas internos, ainda que de uso restrito a um setor.
+
+**2.3.** Esta política independe do nome comercial da ferramenta e permanece aplicável a produtos lançados após sua aprovação.
+
+**2.4.** Havendo conflito entre esta política, outras normas internas e cláusulas contratuais firmadas com contratantes, prevalece a disposição mais restritiva.
+
+### 3. Definições
+
+| Termo | Definição |
+| --- | --- |
+| Sistema de IA | Sistema baseado em máquina que, a partir de dados de entrada, gera conteúdo, previsões, recomendações ou decisões capazes de influenciar ambientes físicos ou virtuais, com graus variáveis de autonomia. |
+| Agente de IA | Sistema de IA que executa ações, e não apenas as sugere, em sistemas, contas ou fluxos de trabalho. Abrange ferramentas que leem, redigem, enviam, encaminham, arquivam ou classificam mensagens, acessam arquivos ou operam sistemas em nome do usuário. |
+| Permissão delegada | Autorização pela qual aplicativo externo age em nome de usuário determinado, com o alcance das permissões desse usuário. |
+| Permissão de aplicação | Autorização pela qual aplicativo externo age sem usuário associado, com alcance sobre toda a organização. |
+| Consentimento administrativo | Aprovação concedida por administrador que libera aplicativo externo a acessar recursos do ambiente corporativo, frequentemente para todos os usuários simultaneamente. |
+| Ferramenta homologada | Ferramenta contratada pela Elinsa, administrada pela empresa e aprovada pelo Comitê de Governança de IA nos termos do item 22. |
+| Ferramenta de consumidor | Conta de IA assinada por pessoa física em nome próprio, sem contrato entre o fornecedor e a Elinsa. |
+| Dado pessoal | Informação relacionada a pessoa natural identificada ou identificável (LGPD, art. 5º, I). |
+| Dado pessoal sensível | Dado sobre origem racial ou étnica, convicção religiosa, opinião política, filiação sindical ou a organização de caráter religioso, filosófico ou político, dado referente à saúde ou à vida sexual, dado genético ou biométrico (LGPD, art. 5º, II). |
+| Criança e adolescente | Criança é a pessoa com até doze anos incompletos e adolescente é a pessoa entre doze e dezoito anos (Lei nº 8.069/1990, art. 2º). |
+| Contratante | Pessoa jurídica que contrata os serviços da Elinsa e que figura como controladora dos dados pessoais transferidos para execução do contrato. |
+| Conteúdo sintético | Imagem, áudio, vídeo ou texto gerado ou manipulado por IA de modo a parecer autêntico. |
+| Perfilamento | Tratamento de dados pessoais, automatizado ou não, para avaliar aspectos de pessoa natural e classificá-la em grupo ou perfil (Lei nº 15.211/2025, art. 2º, V). |
+| Sistema desenvolvido com auxílio de IA | Aplicação, script, automação, formulário, planilha automatizada, banco de dados ou integração cujo código tenha sido gerado, total ou parcialmente, por ferramenta de IA. |
+| Uso não homologado | Uso de IA no trabalho fora dos sistemas e das regras aprovadas pela empresa. Abrange três hipóteses: ferramenta não aprovada; conta pessoal usada para trabalho; e ferramenta aprovada empregada sobre dados ou em tarefas não autorizados. Referido no mercado como *shadow AI*. |
+| Injeção de prompt | Ataque em que instruções maliciosas são inseridas em documento, página, mensagem ou arquivo processado por sistema de IA, levando-o a revelar informação, ignorar suas instruções originais ou executar ação não pretendida. |
+
+### 4. Princípios
+
+**4.1.** O uso de IA na Elinsa observa os seguintes princípios:
+
+- **a) Contratação prévia.** Nenhum serviço de IA processa informação da Elinsa sem contrato entre a empresa e o fornecedor.
+- **b) Finalidade e minimização.** O processamento ocorre para finalidade específica, legítima e informada, com o mínimo de dados necessário.
+- **c) Segurança.** O processamento por IA e o código produzido com auxílio de IA observam os padrões de segurança exigidos de qualquer sistema corporativo.
+- **d) Supervisão humana.** Decisões de impacto sobre pessoas ou sobre a operação da rede não são tomadas exclusivamente por sistema automatizado.
+- **e) Responsabilização.** Todo uso de IA sobre informação classificada tem responsável identificável.
+- **f) Proteção prioritária de crianças e adolescentes.** Envolvendo menores de dezoito anos, prevalece o melhor interesse da criança e do adolescente.
+- **g) Proporcionalidade ao risco.** A exigência de controle cresce conforme o risco da aplicação, na forma do item 9.
+- **h) Igualdade de tratamento.** As regras aplicam-se a todos os níveis hierárquicos, sem exceção informal.
+- **i) Alternativa aprovada.** A empresa compromete-se a disponibilizar ferramenta homologada que atenda às necessidades legítimas de trabalho. Restrição sem alternativa desloca o uso para canais que a empresa não enxerga.
+
+<Callout type="info" title="Fundamento">
+LGPD, art. 6º, I a X. Os princípios de finalidade, necessidade, segurança, prevenção, não discriminação e responsabilização são obrigatórios em toda operação de tratamento. O EU AI Act (Regulamento UE 2024/1689) adota a mesma lógica de proporcionalidade ao risco, referida nesta política como parâmetro de boa prática internacional, sem efeito vinculante no Brasil.
+</Callout>
+
+### 5. Governança e competências
+
+**5.1.** Fica instituído o Comitê de Governança de IA, competente para avaliar, homologar, monitorar e revogar o uso de ferramentas de IA na Elinsa.
+
+**5.2.** O Comitê é composto por representantes de Tecnologia da Informação, Segurança da Informação, Jurídico, Encarregado de Proteção de Dados, Recursos Humanos, Comunicação, área técnica ou operacional e um patrocinador executivo da Diretoria.
+
+**5.3.** Competem ao Comitê a decisão sobre homologação, exceções, revogações e a definição de condições de uso.
+
+**5.4.** **Compete à Tecnologia da Informação receber solicitações, instruí-las e executar as decisões do Comitê.** A TI não decide sobre liberação de ferramentas de IA. Negativas fundadas nesta política constituem decisão do Comitê, e não avaliação individual de técnico ou de responsável pela área.
+
+**5.5.** Compete ao Encarregado avaliar finalidade, base legal e necessidade de relatório de impacto à proteção de dados pessoais.
+
+**5.6.** Compete ao Jurídico avaliar o contrato com o fornecedor, as cláusulas de tratamento de dados e a compatibilidade do uso pretendido com as obrigações assumidas perante contratantes.
+
+**5.7.** Compete a cada gestor de área o cumprimento desta política em sua equipe, inclusive quanto a sistemas e conteúdos produzidos internamente.
+
+**5.8.** O Comitê pode estabelecer regras diferenciadas por área, função e caso de uso, observados os limites desta política, de modo a não submeter atividades de baixo risco ao mesmo controle exigido das de risco elevado.
+
+<Callout type="info" title="Fundamento">
+LGPD, art. 41 (indicação de encarregado) e art. 38 (relatório de impacto). A concentração da decisão em colegiado, com registro escrito, atende ao princípio de responsabilização e prestação de contas do art. 6º, X, que exige demonstração da adoção de medidas eficazes de conformidade.
+</Callout>
+
+## Título II. Critérios de classificação
+
+### 6. Classificação das ferramentas de IA
+
+**6.1.** Toda ferramenta de IA enquadra-se em uma das categorias seguintes, que determina o que pode processar:
+
+| Categoria | Descrição | Uso permitido |
+| --- | --- | --- |
+| Homologada | Contratada pela Elinsa, administrada pela empresa e aprovada pelo Comitê | Conforme a classificação da informação do item 7 e as condições fixadas na homologação |
+| Em avaliação | Ferramenta que a empresa pretende contratar, ainda não aprovada | Nenhum uso sobre informação classificada até a homologação |
+| De consumidor | Assinada por pessoa física, sem contrato com a Elinsa | Vedado o uso sobre qualquer informação classificada como interna, confidencial ou restrita |
+
+**6.2.** A integração da ferramenta ao ecossistema corporativo já contratado não dispensa homologação. O critério de aprovação é a existência de contrato, a avaliação formal e os controles ofertados, e não o fornecedor de origem.
+
+**6.3.** A homologação de um software não se estende automaticamente a recurso de IA nele incorporado após a aprovação. Identificado recurso novo de IA em ferramenta já aprovada, a área usuária comunica a TI, e o recurso permanece fora de uso sobre informação confidencial ou restrita até manifestação do Comitê.
+
+<Callout type="info" title="Fundamento">
+Fornecedores acrescentam funcionalidades de IA a produtos já aprovados sem que o processamento, o armazenamento e o compartilhamento introduzidos por essas funcionalidades tenham passado por avaliação. O usuário não descumpre norma alguma, mas o resultado é o mesmo: informação da empresa passa a trafegar por um canal não avaliado. LGPD, art. 9º, § 2º, que exige informação prévia ao titular quando a finalidade do tratamento muda.
+</Callout>
+
+### 7. Classificação da informação
+
+**7.1.** As informações da Elinsa classificam-se em:
+
+- **a) Pública.** Informação já divulgada oficialmente pela empresa.
+- **b) Interna.** Informação de uso interno, sem caráter sigiloso, não destinada à divulgação externa.
+- **c) Confidencial.** Contratos, informações financeiras, código-fonte, estratégias comerciais, informações técnicas de rede e documentação de projetos.
+- **d) Restrita.** Dados pessoais de colaboradores, dados pessoais sensíveis, dados de crianças e adolescentes, dados de titularidade de contratantes e credenciais de segurança.
+
+**7.2.** A classificação alcança e-mails, documentos, repositórios de arquivos, mensagens corporativas, bancos de dados, código-fonte, ordens de serviço, registros fotográficos de campo e informações de recursos humanos.
+
+**7.3.** Na dúvida sobre o enquadramento, prevalece a classificação mais restritiva até manifestação do Comitê.
+
+### 8. Níveis de autonomia
+
+**8.1.** Sistemas de IA classificam-se quanto à autonomia nos seguintes níveis, que determinam a instância de aprovação exigida:
+
+| Nível | Descrição | Aprovação exigida |
+| --- | --- | --- |
+| 0. Assistência | Sugere texto, resumo ou análise. A pessoa decide e executa | Homologação da ferramenta |
+| 1. Execução com aprovação | Prepara a ação, cuja execução depende de aprovação humana explícita | Homologação e responsável nomeado |
+| 2. Automação limitada | Executa ações pré-definidas de escopo restrito, com supervisão periódica | Comitê de Governança de IA |
+| 3. Agente autônomo | Executa ações em sistemas corporativos com pouca ou nenhuma intervenção humana em tempo real | Comitê, Segurança da Informação e Diretoria |
+
+**8.2.** Sistemas de níveis 2 e 3 têm ponto de supervisão humana designado, com competência e autoridade para intervir, suspender ou reverter suas ações.
+
+<Callout type="info" title="Fundamento">
+EU AI Act, art. 26, nº 2, que exige a atribuição da supervisão humana a pessoa com competência, formação e autoridade necessárias. LGPD, art. 20, que assegura ao titular o direito de solicitar revisão de decisões tomadas unicamente com base em tratamento automatizado.
+</Callout>
+
+### 9. Matriz de risco
+
+**9.1.** A matriz orienta as decisões do Comitê e a intensidade dos controles exigidos:
+
+| Nível | Exemplos |
+| --- | --- |
+| Baixo | Resumo de conteúdo público; geração de imagem genérica |
+| Moderado | Relatório com informação interna; dados pessoais comuns já autorizados |
+| Alto | Resumo de e-mails com dados pessoais; material institucional com pessoas identificáveis |
+| Muito alto | Dados sensíveis; clonagem de voz; dados de consumidores de contratantes; dados de menores de dezoito anos |
+| Crítico | Agente com acesso de execução a sistemas corporativos; reconhecimento biométrico; avaliação automatizada de colaboradores; conteúdo sintético de pessoa identificável; IA em decisão operacional de rede; sistema interno sem revisão de código |
+| Vedado | Serviço de IA sem contrato processando informação classificada; conteúdo sexualizado envolvendo menores |
+
+## Título III. Restrições de inserção e de conexão
+
+### 10. Vedações de inserção de informação
+
+**10.1.** É vedado inserir em ferramenta de IA não homologada:
+
+- **a)** senhas, credenciais, tokens, chaves de API e certificados digitais;
+- **b)** dados de configuração de infraestrutura, topologia de rede e diagramas de sistemas;
+- **c)** informações sobre vulnerabilidades identificadas em sistemas da Elinsa ou de contratantes;
+- **d)** logs que possam conter as informações das alíneas anteriores;
+- **e)** código-fonte proprietário da Elinsa ou de contratantes;
+- **f)** projetos, memoriais, laudos e desenhos técnicos de contratantes;
+- **g)** documentos de terceiros protegidos por confidencialidade contratual;
+- **h)** obras de terceiros cujas licenças não autorizem esse uso;
+- **i)** informações classificadas como confidenciais ou restritas, na forma do item 7.
+
+**10.2.** A vedação do item 10.1 aplica-se ainda que a inserção seja parcial, sirva a teste, ocorra fora do horário de trabalho ou em equipamento pessoal.
+
+**10.3.** A inserção de dados pessoais em ferramenta homologada observa adicionalmente o Título IV.
+
+<Callout type="info" title="Fundamento">
+LGPD, art. 46, que impõe medidas técnicas e administrativas aptas a proteger os dados pessoais de acessos não autorizados. Marco Civil da Internet, art. 7º, VII, que assegura ao usuário o não fornecimento de seus dados pessoais a terceiros sem consentimento livre, expresso e informado. A inserção em ferramenta não contratada configura comunicação de dados a terceiro sem instrumento que a ampare.
+</Callout>
+
+### 11. Conexão de ferramentas de IA ao ambiente corporativo
+
+<Callout type="warning" title="Item 11.1 — Vedação">
+É vedado conectar a caixas de e-mail corporativas, ao ambiente Microsoft 365 da Elinsa ou a qualquer outro sistema, banco de dados ou repositório corporativo qualquer serviço de IA que não tenha contrato firmado com a Elinsa.
+
+A vedação aplica-se a todos os níveis hierárquicos, incluindo coordenadores, gerentes, diretores e membros da alta administração. Não há liberação individual, piloto informal nem uso em caráter de teste.
+</Callout>
+
+**11.2.** A vedação do item 11.1 abrange assistentes conversacionais, agentes autônomos, extensões de navegador, complementos, conectores e integrações, independentemente do fornecedor.
+
+<Callout type="info" title="Fundamento">
+Ausência de contrato significa ausência de instrumento que defina finalidade, prazo de retenção, suboperadores, transferência internacional, medidas de segurança e responsabilidade. Sem esses elementos a empresa não consegue demonstrar conformidade, como exige o princípio de responsabilização e prestação de contas (LGPD, art. 6º, X), nem instruir eventual comunicação de incidente com informação confiável sobre o que foi exposto (art. 48).
+</Callout>
+
+<Callout type="info" title="Fundamento">
+Desativar o uso de dados para treinamento de modelos não equivale a contratar o serviço. A configuração varia por plano e é alterável pelo próprio usuário. Ainda com o treinamento desativado, a informação pode permanecer em histórico de conta, registros operacionais, sistemas de monitoramento de abuso, backups, registros de navegador, serviços conectados e integrações de terceiros. Conteúdo que já tenha contribuído para treinamento não é removido do modelo pela desativação posterior da opção.
+</Callout>
+
+**11.3.** Ferramentas contratadas pela Elinsa observam adicionalmente as seguintes condições para acesso agêntico:
+
+- **a)** o acesso agêntico a e-mail, arquivos ou sistemas corporativos exige aprovação específica do Comitê, distinta da homologação do uso conversacional da mesma ferramenta;
+- **b)** permissões de aplicação exigem aprovação da Diretoria, além do Comitê;
+- **c)** agentes com capacidade de enviar mensagens em nome de usuários operam, no mínimo, no nível 1 do item 8.1;
+- **d)** toda integração aprovada tem prazo de validade, responsável nomeado, registro de atividade e procedimento de revogação documentado;
+- **e)** nenhum agente opera sobre dados de titularidade de contratantes sem autorização expressa do contratante.
+
+<Callout type="info" title="Fundamento">
+Ferramentas agênticas ampliam o risco em dois eixos. Quanto à leitura, o alcance da integração costuma ser a caixa postal inteira e o histórico, e não a mensagem que motivou o pedido, o que contraria o princípio da necessidade (LGPD, art. 6º, III). Quanto à ação, produzem efeitos externos verificáveis por clientes, contratantes e órgãos públicos, atribuídos ao titular da conta.
+</Callout>
+
+<Callout type="info" title="Fundamento">
+O risco de integração por token não é hipotético. Em agosto de 2025, atacantes obtiveram tokens OAuth da Drift, integração de assistente de IA conversacional, e acessaram os ambientes Salesforce de mais de setecentas organizações, extraindo dados de contato, registros de atendimento e credenciais em texto claro ali armazenadas. Os tokens contornaram a autenticação multifator, porque tokens de integração não se submetem ao segundo fator, e frequentemente não expiram. O episódio sustenta as exigências de prazo de validade, registro de atividade e revogação previstas na alínea d.
+</Callout>
+
+**11.4.** A necessidade de apoio de IA no trabalho com e-mails e documentos é legítima e será instruída na forma do item 22, que avaliará ferramenta corporativa disponível ou contratável, escopo mínimo de acesso e controles de permissão, retenção, registro e revogação.
+
+**11.5.** Todo conteúdo externo processado por sistema de IA, incluindo e-mails recebidos, anexos, páginas da internet e documentos de terceiros, é tratado como entrada não confiável. Aplicam-se as seguintes regras:
+
+- **a)** sistema de IA não executa instrução encontrada dentro do conteúdo que processa, ainda que a instrução se apresente como legítima, urgente ou originada da empresa;
+- **b)** agente exposto a conteúdo externo tem suas permissões limitadas ao mínimo da tarefa e não acumula acesso de leitura ampla com capacidade de ação externa;
+- **c)** a avaliação de homologação de agente que processe conteúdo externo examina expressamente a exposição a injeção de prompt e as medidas de contenção adotadas pelo fornecedor;
+- **d)** suspeita de manipulação do comportamento de sistema de IA é comunicada como incidente, na forma do item 23.
+
+<Callout type="info" title="Fundamento">
+A injeção de prompt afeta qualquer sistema de IA conectado, homologado ou não. O agravamento decorre da combinação entre acesso a dado sensível e capacidade de agir sem revisão humana: um e-mail recebido pode conter instrução destinada ao agente que o lê. Em ferramenta não homologada a exposição não foi avaliada, e a equipe de segurança não dispõe de registro para investigar o que ocorreu.
+</Callout>
+
+### 12. Controles técnicos e detecção
+
+**12.1.** Compete à Tecnologia da Informação manter os seguintes controles *(a confirmar viabilidade no licenciamento vigente)*:
+
+- **a)** restrição do consentimento de usuário para aplicativos de terceiros no diretório corporativo, condicionando a liberação a aprovação administrativa;
+- **b)** fluxo formal de solicitação de acesso, com registro do solicitante, do escopo pedido e da decisão;
+- **c)** revisão periódica dos aplicativos com consentimento vigente e revogação dos que não tenham homologação ativa;
+- **d)** inventário das integrações aprovadas, com escopo de permissões, prazo e responsável.
+
+<Callout type="info" title="Fundamento">
+LGPD, art. 37, que obriga controlador e operador a manter registro das operações de tratamento, e art. 46, § 2º, que exige a observância das medidas de segurança desde a concepção do serviço até a sua execução.
+</Callout>
+
+**12.2.** Compete à TI e à Segurança da Informação manter rotina de identificação de uso não homologado, que inclui:
+
+- **a)** inventário periódico de uso de IA levantado junto às áreas, com identificação das tarefas atendidas e do que impede o uso da alternativa aprovada;
+- **b)** revisão de registros de rede e de aplicações para identificar conexões a serviços de IA;
+- **c)** auditoria de extensões de navegador e complementos, com verificação das permissões solicitadas;
+- **d)** verificação de despesas e registros de compras, para identificar assinaturas de IA sem avaliação de segurança;
+- **e)** busca por chaves de API e integrações não geridas em repositórios, ambientes de nuvem e plataformas de automação.
+
+**12.3.** O monitoramento é proporcional à finalidade, previamente comunicado aos colaboradores e limitado à identificação de ferramentas e fluxos de dados. Não abrange a inspeção rotineira do conteúdo de conversas.
+
+**12.4.** O levantamento previsto na alínea a do item 12.2 tem finalidade de diagnóstico. Seu resultado orienta a contratação de alternativas aprovadas e não serve de base para medida disciplinar quanto a usos declarados espontaneamente.
+
+<Callout type="info" title="Fundamento">
+Controle técnico isolado não revela todo o uso não homologado, porque parte dele ocorre em conta pessoal, dispositivo próprio ou tráfego indistinguível do uso comum da internet. O diagnóstico junto às áreas identifica a lacuna que motiva o desvio, que costuma ser a ausência de alternativa aprovada ou a demora do processo de aprovação. A proporcionalidade do monitoramento decorre do art. 6º, III, da LGPD e do respeito à privacidade previsto no art. 3º, II, do Marco Civil da Internet.
+</Callout>
+
+## Título IV. Proteção de pessoas
+
+### 13. Dados pessoais
+
+**13.1.** O tratamento de dados pessoais por sistema de IA exige finalidade específica e informada, base legal do art. 7º da LGPD, limitação ao mínimo necessário e medidas de segurança compatíveis.
+
+**13.2.** Dados coletados para determinada finalidade não podem ser reaproveitados por IA para finalidade incompatível.
+
+**13.3.** O vínculo empregatício não constitui autorização genérica para tratar dados de colaboradores por IA.
+
+**13.4.** Dados pessoais sensíveis, incluindo atestados, exames ocupacionais e registros de acidente de trabalho, somente são processados por ferramenta homologada para esse fim específico, mediante avaliação prévia do Encarregado.
+
+**13.5.** Colaboradores podem requerer, pelo canal do item 23, confirmação sobre a submissão de seus dados a ferramentas de IA, bem como correção ou eliminação, sem necessidade de justificar o pedido e sem consequência funcional.
+
+<Callout type="info" title="Fundamento">
+LGPD, art. 7º (hipóteses de tratamento), art. 11 (dados sensíveis, cujo rol do art. 5º, II, inclui dado referente à saúde), art. 18 (direitos do titular, entre eles confirmação, acesso, correção e eliminação) e art. 6º, I e III (finalidade e necessidade).
+</Callout>
+
+### 14. Dados de titularidade de contratantes
+
+**14.1.** Dados de consumidores e dados operacionais recebidos para execução de contrato classificam-se como restritos por padrão.
+
+**14.2.** O tratamento desses dados por qualquer ferramenta de IA depende de autorização expressa do contratante, além da homologação interna.
+
+**14.3.** Registros fotográficos de campo obtidos em serviços comerciais e em obras seguem a regra do item 14.2.
+
+<Callout type="info" title="Fundamento">
+LGPD, art. 39, segundo o qual o operador realiza o tratamento conforme as instruções fornecidas pelo controlador. Nos serviços prestados a contratantes do setor de energia, a Elinsa atua como operadora. O tratamento fora das instruções recebidas equipara o operador ao controlador e gera responsabilidade solidária pelos danos causados (art. 42, § 1º, I), somando-se ao risco de inadimplemento contratual.
+</Callout>
+
+### 15. Imagem, voz e identidade
+
+**15.1.** A utilização de imagem, voz, aparência, nome ou outro elemento identificador de pessoa para geração ou transformação de conteúdo por IA depende de autorização compatível com a finalidade pretendida.
+
+**15.2.** A regra do item 15.1 alcança geração ou alteração de fotografias, criação de avatares, clonagem ou síntese de voz, geração de vídeo com pessoas identificáveis e uso de imagens como referência para gerar novas imagens.
+
+**15.3.** É vedado utilizar imagens de colaboradores para treinamento ou ajuste fino de modelos de IA.
+
+**15.4.** Conteúdo que retrate pessoa identificável de modo confundível com registro real deve ser identificado como gerado ou manipulado por IA, inclusive em uso interno.
+
+**15.5.** É vedado criar conteúdo sintético que retrate pessoa identificável sem autorização expressa e finalidade legítima documentada.
+
+**15.6.** Situações envolvendo conteúdo de caráter íntimo são comunicadas de imediato pelo canal do item 23, para remoção diligente.
+
+<Callout type="info" title="Fundamento">
+Constituição Federal, art. 5º, X, e Código Civil, arts. 20 e 21, que condicionam o uso da imagem à autorização e preveem reparação por danos morais e materiais. EU AI Act, art. 50, nº 2 e nº 4, que exige a marcação de conteúdo sintético e a divulgação de que o conteúdo foi gerado ou manipulado artificialmente. Marco Civil da Internet, art. 21, que estabelece responsabilidade pela não remoção diligente de conteúdo íntimo após notificação.
+</Callout>
+
+### 16. Comunicação interna e material institucional
+
+**16.1.** Cartazes, murais, homenagens, comunicados, campanhas internas e conteúdo para canais da empresa constituem material institucional e sujeitam-se a esta política, ainda que produzidos por um setor, informalmente e sem custo.
+
+**16.2.** É vedado inserir dados pessoais de colaboradores, incluindo nome completo, data de nascimento, matrícula, cargo e fotografia, em ferramenta de IA não homologada para produzir material de qualquer natureza.
+
+**16.3.** Materiais de celebração observam minimização, limitando-se ao primeiro nome e ao dia, vedada a exibição de nome completo em conjunto com data de nascimento.
+
+**16.4.** Fotografias de colaboradores alteradas por IA não circulam como conteúdo oficial sem autorização da pessoa retratada e sem identificação da manipulação.
+
+**16.5.** A autorização de uso de imagem firmada na admissão não abrange a alteração da imagem por IA, que constitui finalidade distinta e exige manifestação específica.
+
+**16.6.** Material em circulação que contrarie este item é retirado quando identificado. A pessoa retratada pode requerer a retirada a qualquer momento pelo canal do item 23, sem necessidade de justificar o pedido.
+
+<Callout type="info" title="Fundamento">
+LGPD, art. 6º, I e III. A finalidade de homenagear não justifica a coleta de dado excedente: a combinação de nome completo e data de nascimento é diretamente utilizável em fraude de identidade e não é necessária ao propósito. LGPD, art. 8º, § 4º, que fulmina de nulidade autorizações genéricas, e art. 9º, § 2º, que exige nova informação ao titular quando a finalidade do tratamento muda.
+</Callout>
+
+### 17. Crianças e adolescentes
+
+<Callout type="warning" title="Item 17.1 — Vedação absoluta">
+É vedado utilizar qualquer sistema de IA para gerar, alterar, editar, compor, armazenar ou processar imagem, vídeo, áudio ou texto que retrate criança ou adolescente de forma erotizada, sexualmente sugestiva ou em contexto próprio do universo sexual adulto.
+
+A vedação não admite exceção, autorização prévia, aprovação hierárquica ou dispensa pelo processo do item 22.
+
+Quem identificar conteúdo dessa natureza comunica imediatamente o canal do item 23. A empresa procede à remoção e à comunicação às autoridades competentes, sem prejuízo da responsabilização criminal cabível.
+</Callout>
+
+<Callout type="info" title="Fundamento">
+Lei nº 15.211/2025, art. 23, que veda a monetização e o impulsionamento de conteúdos que retratem crianças e adolescentes de forma erotizada ou sexualmente sugestiva, e art. 27, que impõe a remoção e a comunicação de conteúdos de aparente exploração, abuso sexual, sequestro e aliciamento às autoridades competentes.
+</Callout>
+
+**17.2.** O uso de imagem ou voz de criança ou adolescente em conteúdo gerado ou alterado por IA depende de autorização escrita dos pais ou responsáveis legais, específica quanto à finalidade. Autorização obtida para uso tradicional não se estende à geração ou alteração por IA.
+
+**17.3.** São vedados, independentemente de autorização:
+
+- **a)** o uso de imagens de crianças ou adolescentes para treinamento ou ajuste fino de modelos;
+- **b)** a criação de conteúdo sintético que retrate criança ou adolescente, em qualquer contexto;
+- **c)** o envio de imagens de crianças ou adolescentes a ferramenta não homologada, inclusive para recorte, melhoria de qualidade ou remoção de fundo.
+
+**17.4.** Dados de aprendizes e de colaboradores menores de dezoito anos não são inseridos em ferramenta não homologada em nenhuma hipótese, e seu processamento por IA depende de avaliação prévia do Encarregado.
+
+**17.5.** É vedado o perfilamento de menores de dezoito anos para direcionamento de publicidade, bem como o emprego de análise emocional para esse fim.
+
+**17.6.** Assistente de IA voltado ao público externo passa obrigatoriamente pela homologação do item 22, com avaliação expressa dos riscos de exposição de crianças e adolescentes.
+
+<Callout type="info" title="Fundamento">
+LGPD, art. 14, que exige tratamento no melhor interesse da criança e do adolescente e consentimento específico e destacado de pelo menos um dos pais para dados de crianças. Lei nº 15.211/2025: art. 3º (nível elevado de privacidade e segurança), art. 7º (configuração mais protetiva por padrão), art. 22 e art. 26 (vedação de perfilamento e de análise emocional para publicidade) e art. 6º (dever de prevenir e mitigar riscos desde a concepção, em serviços de acesso provável por esse público). A lei está em vigor desde 17 de março de 2026.
+</Callout>
+
+### 18. Decisões sobre pessoas e processos de RH
+
+**18.1.** São vedados:
+
+- **a)** avaliação, promoção, transferência ou desligamento de colaborador com base unicamente na saída de sistema de IA;
+- **b)** seleção ou rejeição automática de candidatos com base unicamente em pontuação gerada por IA;
+- **c)** classificação comportamental ou inferência de personalidade de colaboradores e candidatos;
+- **d)** reconhecimento facial ou reconhecimento emocional de colaboradores, inclusive em frentes de serviço e veículos;
+- **e)** uso de IA como base exclusiva para decisão disciplinar.
+
+**18.2.** São permitidos, com decisão final humana, o apoio à triagem e ao resumo de currículos, à redação de comunicações e descrições de vaga e à organização de processos seletivos.
+
+**18.3.** As vedações do item 18.1 aplicam-se integralmente a aprendizes e colaboradores menores de dezoito anos, sem possibilidade de exceção pelo item 22.
+
+**18.4.** Utilizado sistema de IA em decisão relacionada a pessoas, os colaboradores afetados são informados previamente.
+
+<Callout type="info" title="Fundamento">
+LGPD, art. 20, que assegura o direito à revisão de decisões automatizadas que afetem interesses do titular, incluídas as destinadas a definir perfil pessoal e profissional. EU AI Act, Anexo III, item 4, que classifica como de risco elevado os sistemas usados em recrutamento, avaliação de desempenho e cessação de vínculo, e art. 5º, nº 1, alínea f, que proíbe a inferência de emoções no local de trabalho, salvo por razões médicas ou de segurança. O art. 26, nº 7, prevê a informação prévia aos trabalhadores afetados.
+</Callout>
+
+## Título V. Desenvolvimento e operação
+
+### 19. Sistemas e código desenvolvidos com auxílio de IA
+
+**19.1.** Todo sistema, script, automação, formulário, planilha automatizada ou integração que armazene, processe ou exiba informação da Elinsa é registrado junto à Tecnologia da Informação antes de entrar em uso efetivo, independentemente de quem o desenvolveu, da ferramenta utilizada e de o uso ser restrito a um setor.
+
+**19.2.** O registro informa finalidade, dados tratados, responsável técnico, responsável de negócio e local de hospedagem.
+
+**19.3.** São requisitos mínimos:
+
+- **a)** revisão de segurança prévia ao tratamento de informação confidencial ou restrita;
+- **b)** proibição de credenciais, tokens, chaves, strings de conexão e dados pessoais gravados diretamente no código-fonte;
+- **c)** código-fonte em repositório corporativo sob controle da TI, com histórico de versões, vedada a guarda em repositório ou conta pessoal;
+- **d)** ao menos duas pessoas com acesso e conhecimento suficientes para manter o sistema, além da TI, e documentação que permita a sucessão;
+- **e)** componentes e bibliotecas suportados, com verificação de dependências e licenças, exigindo componente descontinuado justificativa e plano de substituição;
+- **f)** dados hospedados em infraestrutura aprovada pela TI, vedadas cópias em serviços pessoais de nuvem;
+- **g)** autenticação integrada ao diretório corporativo sempre que tecnicamente viável.
+
+**19.4.** Código produzido com auxílio de IA é tratado como código de autoria de quem o incorporou ao sistema, que responde por ele. Trecho que o responsável não consiga explicar não entra em sistema que trate informação confidencial ou restrita.
+
+**19.5.** Sistemas em uso na data de aprovação desta política são registrados no prazo de `[definir prazo]`, para inventário e avaliação de risco. O registro no prazo não gera medida disciplinar.
+
+**19.6.** Identificado risco relevante, o Comitê fixa prazo de correção, migração ou desativação, considerada a importância do sistema para a operação.
+
+<Callout type="info" title="Fundamento">
+LGPD, art. 49, que exige que os sistemas utilizados para tratamento de dados pessoais sejam estruturados de forma a atender aos requisitos de segurança e aos padrões de boas práticas e governança, e art. 46, § 2º, que impõe a observância dessas medidas desde a concepção. O registro atende ainda ao art. 37, que obriga à manutenção de registro das operações de tratamento.
+</Callout>
+
+### 20. Atividades operacionais e de rede elétrica
+
+**20.1.** Sistemas de IA não constituem base exclusiva de decisão sobre operação de rede, energização ou desenergização, liberação de equipes para serviço em campo, classificação de risco técnico ou procedimento que afete a segurança de trabalhadores ou da população.
+
+**20.2.** Aplicações de IA sobre dados operacionais de rede dependem de aprovação conjunta do Comitê e da área técnica responsável, sem prejuízo das normas de segurança do trabalho aplicáveis.
+
+<Callout type="info" title="Fundamento">
+EU AI Act, Anexo III, item 2, que classifica como de risco elevado os sistemas de IA destinados a funcionar como componentes de segurança na gestão e no controlo de redes de abastecimento de eletricidade, hipótese diretamente relacionada à atividade da Elinsa.
+</Callout>
+
+### 21. Revisão humana de conteúdo gerado por IA
+
+**21.1.** Exigem revisão humana antes da finalização, do envio ou da publicação:
+
+- **a)** comunicação oficial da empresa e comunicação com contratantes;
+- **b)** contratos e documentos jurídicos;
+- **c)** material publicitário e institucional, inclusive comunicação interna;
+- **d)** documentos técnicos, laudos, memoriais e relatórios de obra ou manutenção;
+- **e)** conteúdo que subsidie decisão sobre pessoas ou sobre segurança operacional.
+
+**21.2.** Disponibilizado sistema de IA que interaja diretamente com pessoas, estas são informadas de que interagem com sistema de IA, salvo quando isso for evidente pelo contexto.
+
+**21.3.** A titularidade de conteúdo substancialmente gerado por IA é verificada antes de uso externo ou de registro como propriedade da Elinsa.
+
+**21.4.** Quando a IA contribuir para decisão que afete colaboradores, clientes, contratantes, resultado financeiro ou segurança operacional, registram-se a ferramenta utilizada, a finalidade, o responsável pela revisão e a decisão adotada.
+
+<Callout type="info" title="Fundamento">
+EU AI Act, art. 50, nº 1, que impõe a informação de que se está interagindo com um sistema de IA. A titularidade de obra gerada por IA permanece indefinida no ordenamento brasileiro, razão pela qual a contribuição humana relevante deve ser demonstrável.
+</Callout>
+
+## Título VI. Procedimentos, responsabilidade e vigência
+
+### 22. Homologação e exceções
+
+**22.1.** Toda ferramenta de IA externa, toda integração com o ambiente corporativo e toda exceção a esta política seguem o fluxo:
+
+| Etapa | Ato | Conteúdo |
+| --- | --- | --- |
+| 1 | Solicitação | Registro da finalidade, dos dados envolvidos, do escopo de acesso e da existência de capacidade agêntica |
+| 2 | Segurança | Avaliação das permissões pedidas, distinguindo permissão delegada de permissão de aplicação, e das superfícies de exposição |
+| 3 | Privacidade | Avaliação de finalidade, base legal e minimização pelo Encarregado. Obrigatória havendo dados de menores de dezoito anos ou de titularidade de contratantes |
+| 4 | Jurídico | Avaliação do contrato, das cláusulas de tratamento e da compatibilidade com obrigações perante contratantes |
+| 5 | Decisão | Aprovação, aprovação condicionada ou reprovação pelo Comitê. Permissões de aplicação e nível 3 exigem também a Diretoria |
+| 6 | Inventário | Inclusão no inventário, com escopo, prazo de validade, responsável e condições |
+| 7 | Revisão | Reavaliação `[definir periodicidade]` ou por mudança de escopo, fornecedor ou legislação |
+
+**22.2.** O Comitê responde à solicitação em até `[definir prazo, sugestão: 10 dias úteis]`. Ultrapassado o prazo sem manifestação, a área solicitante escalona ao patrocinador executivo.
+
+<Callout type="info" title="Fundamento">
+Processo de aprovação lento é uma das causas conhecidas de uso não homologado. Diante de prazo de entrega, a espera por avaliação torna o contorno informal mais provável. O compromisso com prazo de resposta é, portanto, medida de segurança, e não concessão administrativa.
+</Callout>
+
+**22.3.** Toda decisão do Comitê é registrada por escrito, fundamentada e disponibilizada para consulta interna.
+
+**22.4.** Aprovações informais, verbais ou baseadas em posição hierárquica não produzem efeito.
+
+**22.5.** A vedação do item 17.1 não comporta exceção por este processo.
+
+### 23. Incidentes e canal de comunicação
+
+**23.1.** Dúvidas, solicitações de homologação, pedidos de retirada de conteúdo e comunicações de incidente são dirigidos a `[definir canal]`.
+
+**23.2.** Incidente que envolva potencial exposição indevida de dados pessoais é comunicado de imediato, para avaliação de risco e, se necessário, comunicação à ANPD, aos titulares afetados e ao contratante, quando os dados forem de sua titularidade.
+
+**23.3.** A inserção acidental de informação classificada em ferramenta não homologada constitui incidente e deve ser comunicada. A comunicação espontânea e tempestiva é considerada na dosimetria de eventual medida disciplinar.
+
+**23.4.** Comunicada a inserção indevida de informação em ferramenta de IA, adotam-se as seguintes providências:
+
+- **a)** identificar o que foi inserido, em qual ferramenta e conta, quando, e quem teve acesso;
+- **b)** excluir a conversa e os arquivos enviados e, havendo previsão, formalizar pedido de eliminação ao fornecedor;
+- **c)** consultar e registrar o que o fornecedor declara reter em registros operacionais, backups, revisão humana e treinamento, e em que prazos elimina;
+- **d)** revogar permissões concedidas à ferramenta e a complementos conectados e rotacionar senhas, chaves e tokens que tenham aparecido no conteúdo;
+- **e)** acionar Segurança da Informação, Encarregado e Jurídico para avaliar obrigações contratuais e regulatórias e a necessidade de comunicar titulares, contratantes e a ANPD;
+- **f)** documentar o ocorrido e utilizá-lo para ajustar controles, capacitação e alternativas aprovadas.
+
+**23.5.** Comunicações relativas ao item 17.1 têm prioridade e não se submetem a triagem hierárquica prévia.
+
+<Callout type="info" title="Fundamento">
+LGPD, art. 48, que obriga o controlador a comunicar à autoridade nacional e ao titular a ocorrência de incidente de segurança que possa acarretar risco ou dano relevante. O art. 52, § 1º, VII e X, considera a cooperação do infrator e a pronta adoção de medidas corretivas na fixação de sanções, o que justifica o tratamento favorável à comunicação espontânea.
+</Callout>
+
+### 24. Descumprimento e sanções
+
+**24.1.** O descumprimento desta política sujeita o infrator às medidas disciplinares previstas no Código de Conduta e na legislação trabalhista, sem prejuízo de responsabilização civil ou criminal individual.
+
+**24.2.** Registram-se, para ciência de todos os destinatários desta política, as consequências suportadas pela empresa:
+
+- **a)** sanções administrativas da ANPD, entre elas multa de até dois por cento do faturamento, limitada a cinquenta milhões de reais por infração, bloqueio ou eliminação dos dados e suspensão da atividade de tratamento;
+- **b)** responsabilidade solidária e equiparação ao controlador, no tratamento de dados de contratantes fora das instruções recebidas, somada às penalidades contratuais e ao risco de perda do contrato;
+- **c)** advertência, multa de até dez por cento do faturamento do grupo econômico no Brasil, limitada a cinquenta milhões de reais por infração, suspensão temporária e proibição de atividades, por infração ao Estatuto Digital da Criança e do Adolescente;
+- **d)** obrigação de indenizar por danos morais e materiais decorrentes de uso indevido de imagem, voz ou identidade.
+
+<Callout type="info" title="Fundamento">
+LGPD, art. 52, incisos I a XII, e art. 42, § 1º, I. Lei nº 15.211/2025, art. 35, incisos I a IV. Código Civil, arts. 20 e 21. Marco Civil da Internet, arts. 10 e 21.
+</Callout>
+
+### 25. Vigência e revisão
+
+**25.1.** Esta política entra em vigor na data de sua aprovação pela Diretoria, por prazo indeterminado.
+
+**25.2.** A revisão ocorre `[definir periodicidade]` ou por alteração relevante da legislação aplicável, em especial pela regulamentação da Lei nº 15.211/2025 ou pela aprovação de lei geral de Inteligência Artificial no Brasil.
+
+**25.3.** A aprovação é acompanhada de ação de capacitação dirigida a coordenadores, gerentes e Diretoria.
+
+**25.4.** Compete a `[definir responsável]` a manutenção e a atualização deste documento.
+
+<Callout type="info" title="Fundamento">
+EU AI Act, art. 4º, que impõe às organizações assegurar nível suficiente de literacia em IA ao pessoal envolvido na operação e no uso desses sistemas, considerados seus conhecimentos técnicos, experiência e formação. LGPD, art. 50, § 2º, I, alínea h, que prevê a atualização constante do programa de governança com base em monitoramento contínuo.
+</Callout>
+
+### 26. Disposições transitórias
+
+**26.1.** Fica aberta, a partir da aprovação desta política, janela de regularização de `[definir prazo, sugestão: 60 dias]` para declaração de ferramentas de IA, contas, assinaturas, integrações e sistemas já em uso.
+
+**26.2.** A declaração é feita pelo canal do item 23 e informa a ferramenta, a finalidade, os dados envolvidos e as integrações ativas.
+
+**26.3.** **O uso declarado dentro da janela não enseja medida disciplinar.** O objetivo é constituir o inventário inicial e priorizar a contratação de alternativas aprovadas.
+
+**26.4.** Encerrada a janela, o Comitê define, para cada item declarado, a homologação, a substituição ou a desativação, com prazo compatível com a importância da atividade atendida.
+
+**26.5.** Os sistemas de que trata o item 19.5 são declarados nesta mesma janela.
+
+<Callout type="info" title="Fundamento">
+A anistia limitada no tempo produz o inventário que o controle técnico isolado não alcança. Punir a declaração espontânea produz o efeito oposto ao pretendido, porque desloca o uso para canais menos visíveis e reduz a chance de que incidentes futuros sejam reportados. LGPD, art. 52, § 1º, VII e X, que considera a cooperação e a pronta adoção de medidas corretivas na fixação de sanções.
+</Callout>
+
+## Anexo A. Matriz de risco consolidada
+
+| Uso de IA | Risco | Exemplo |
+| --- | --- | --- |
+| Conteúdo público | Baixo | Resumo de texto público |
+| Criação genérica | Baixo | Imagem de produto fictício |
+| Informação interna | Moderado | Relatório interno |
+| Dados pessoais comuns | Alto | Resumo de e-mails de colaboradores |
+| Imagem de colaborador adulto | Alto | Material institucional |
+| Voz de colaborador | Alto | Clonagem de voz |
+| Dados sensíveis | Muito alto | Atestados e exames ocupacionais |
+| Dados de contratantes | Muito alto | Cadastros de serviços comerciais |
+| Dados de menor de dezoito anos | Muito alto | Cadastro de aprendiz |
+| Decisão sobre colaborador | Muito alto | Avaliação de desempenho |
+| Sistema interno sem revisão | Crítico | Aplicação de setor sem controle de código |
+| Reconhecimento biométrico | Crítico | Identificação por rosto |
+| Agente com acesso corporativo | Crítico | IA lendo e respondendo e-mail |
+| IA em decisão de rede | Crítico | Manobra ou liberação de equipe sem decisão humana |
+| Conteúdo sintético de pessoa | Crítico | Vídeo falso de executivo |
+| Imagem de criança ou adolescente | Crítico | Geração ou alteração da foto de um menor |
+| Serviço de IA sem contrato | Vedado | Conta pessoal conectada ao ambiente corporativo |
+| Conteúdo sexualizado com menor | Vedado | Remoção e comunicação às autoridades |
+
+## Anexo B. Base normativa
+
+| Norma | Dispositivos aplicados |
+| --- | --- |
+| Constituição Federal de 1988 | Art. 5º, X (inviolabilidade da imagem) |
+| Código Civil (Lei nº 10.406/2002) | Arts. 20 e 21 (proteção da imagem e da vida privada) |
+| Estatuto da Criança e do Adolescente (Lei nº 8.069/1990) | Art. 2º (conceitos de criança e adolescente) |
+| Marco Civil da Internet (Lei nº 12.965/2014) | Art. 3º, II e III; art. 7º, VII; art. 10; art. 21 |
+| Lei Geral de Proteção de Dados (Lei nº 13.709/2018) | Arts. 5º, 6º, 7º, 8º, 9º, 11, 14, 18, 20, 37, 38, 39, 41, 42, 46, 48, 49, 50 e 52 |
+| Estatuto Digital da Criança e do Adolescente (Lei nº 15.211/2025) | Arts. 2º, 3º, 6º, 7º, 22, 23, 26, 27 e 35. Em vigor desde 17 de março de 2026 |
+| Regulamento (UE) 2024/1689 (EU AI Act) | Art. 4º; art. 5º, nº 1, f; art. 26, nº 2 e nº 7; art. 50; Anexo III, itens 2 e 4. Referência de boa prática, sem efeito vinculante no Brasil |
+| PL 2.338/2023 | Em tramitação. Acompanhamento para fins do item 25.2 |
+| Contratos firmados com contratantes | Cláusulas de confidencialidade e proteção de dados `[referenciar instrumentos]` |
+
+## Anexo C. Exemplos de uso não homologado por área
+
+Este anexo apoia a capacitação prevista no item 25.3. Os exemplos são ilustrativos e não esgotam as hipóteses vedadas.
+
+| Área | Exemplo | Informação exposta |
+| --- | --- | --- |
+| Obras e manutenção | Enviar relatório de obra ou laudo técnico a assistente pessoal para resumir | Documentação de projeto do contratante e informação técnica de rede |
+| Serviços comerciais | Submeter planilha de corte, religação ou fiscalização para análise | Nome, endereço, CPF e situação de débito de consumidores |
+| Campo | Enviar fotografias de vistoria para melhoria de qualidade ou recorte | Endereços, medidores, instalações e pessoas registradas incidentalmente |
+| Recursos Humanos | Usar IA para resumir entrevistas ou avaliar candidatos | Dados de candidatos, informação funcional e critérios de avaliação |
+| Recursos Humanos | Gerar cartaz de aniversariantes com a listagem do setor | Nome completo e data de nascimento de colaboradores |
+| Financeiro | Pedir análise de planilha interna a assistente pessoal | Orçamento, projeções, folha de pagamento e transações |
+| Tecnologia da Informação | Colar trecho de código ou log em serviço público para depurar | Código-fonte, credenciais e arquitetura de sistemas |
+| Comunicação | Alterar fotografia de colaborador para material institucional | Imagem de pessoa identificável, sem autorização para alteração |
+| Jurídico | Enviar contrato ou parecer para resumo | Termos contratuais, orientação privilegiada e dados de contratantes |
+| Coordenação e Diretoria | Conectar assistente pessoal à caixa de e-mail para triagem | Todo o conteúdo da caixa postal e do histórico, incluindo dados de terceiros |
