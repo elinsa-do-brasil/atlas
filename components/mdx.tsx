@@ -4,6 +4,7 @@ import type { MDXComponents } from "mdx/types";
 import { cn } from "@/lib/cn";
 import { Copyable } from "./copyable";
 import { DownloadableFile } from "./downloadable-file";
+import { GithubCard } from "./github-card";
 import { FundamentoBadge } from "./fundamento-badge";
 import { VideoEmbed } from "./video-embed";
 import { YouTubeEmbed } from "./youtube-embed";
@@ -13,6 +14,7 @@ export function getMDXComponents(components?: MDXComponents) {
     ...defaultMdxComponents,
     Copyable,
     DownloadableFile,
+    GithubCard,
     VideoEmbed,
     YouTubeEmbed,
     FundamentoBadge,
