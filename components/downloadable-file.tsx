@@ -142,7 +142,7 @@ async function getFileSize(href: string) {
   }
 }
 
-export async function DownloadableFile({
+export async function Download({
   href,
   title,
   description,
