@@ -154,7 +154,7 @@ export async function DownloadableFile({
     normalizeExtension(type) ?? extensionFromPath(fileName ?? href);
   const { icon: Icon, iconClassName } = fileStyles[getFileGroup(extension)];
   const downloadName = fileName ?? fileNameFromPath(href);
-  const typeLabel = type?.replace(/^[^/]+\//, "").toUpperCase();
+  const typeLabel = type?.replace(/^[^/]+\//, "");
   const fileSize = await getFileSize(href);
 
   return (
