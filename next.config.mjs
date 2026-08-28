@@ -5,6 +5,7 @@ const withMDX = createMDX();
 /** @type {import('next').NextConfig} */
 const config = {
   reactStrictMode: true,
+  cacheComponents: true,
   images: {
     formats: ["image/avif", "image/webp"],
   },

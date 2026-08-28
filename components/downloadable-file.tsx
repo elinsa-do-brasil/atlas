@@ -12,6 +12,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { cn } from "@/lib/cn";
+import { cacheLife } from "next/cache";
 import { buttonVariants } from "./ui/button";
 import { Card, CardContent, CardFooter } from "./ui/card";
 
@@ -129,6 +130,9 @@ function formatFileSize(bytes: number) {
 }
 
 async function getFileSize(href: string) {
+  "use cache";
+  cacheLife("hours");
+
   try {
     const response = await fetch(href, { method: "HEAD" });
     const contentLength = response.headers.get("content-length");
