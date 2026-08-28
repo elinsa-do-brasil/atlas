@@ -1,6 +1,5 @@
 import {
   AudioLines,
-  Download,
   File,
   FileArchive,
   FileCode,
@@ -13,7 +12,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { cacheLife } from "next/cache";
-import { buttonVariants } from "./ui/button";
+import { DownloadButton } from "./download-button";
 import { Card, CardContent, CardFooter } from "./ui/card";
 
 const fileGroups = {
@@ -191,17 +190,11 @@ export async function DownloadableFile({
       </CardContent>
 
       <CardFooter className="py-2">
-        <a
-          className={cn(
-            buttonVariants({ size: "sm", variant: "primary" }),
-            "mt-2 w-full shrink-0 gap-2 px-4 py-2 no-underline hover:no-underline sm:w-auto [&_svg]:size-4",
-          )}
-          download={downloadName}
+        <DownloadButton
+          className="mt-2 w-full shrink-0 px-4 py-2 sm:w-auto"
+          fileName={downloadName}
           href={href}
-        >
-          <Download aria-hidden="true" />
-          Baixar
-        </a>
+        />
       </CardFooter>
     </Card>
   );
