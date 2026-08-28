@@ -4,8 +4,8 @@ import type { MDXComponents } from "mdx/types";
 import { cn } from "@/lib/cn";
 import { Copyable } from "./copyable";
 import { Download } from "./downloadable-file";
-import { GithubCard } from "./github-card";
 import { FundamentoBadge } from "./fundamento-badge";
+import { GithubCard } from "./github-card";
 import { VideoEmbed } from "./video-embed";
 import { YouTubeEmbed } from "./youtube-embed";
 
