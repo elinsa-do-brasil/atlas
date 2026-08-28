@@ -96,7 +96,7 @@ export async function GithubCard({
         <p className="m-0 text-sm leading-6">{description}</p>
       </CardContent>
 
-      <CardFooter className="px-3 py-2 flex gap-2">
+      <CardFooter className="py-2 flex gap-2">
         <a
           className={cn(
             buttonVariants({ size: "sm", variant: "primary" }),
