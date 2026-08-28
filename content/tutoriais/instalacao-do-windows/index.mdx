@@ -1,0 +1,32 @@
+---
+title: Instalação padrão do Windows
+description: Passo a passo para criar o usuário local, instalar o SAP GUI e configurar a conexão com o servidor.
+---
+
+<DownloadableFile href="https://file.elinsadobrasil.com.br/scripts/autounattend.xml" title="autounattend.xml" description="Script de instalação semi-automática do Windows." fileName="autounattend.xml" type="XML" />
+
+Coloque o arquivo `autounattend.xml` na raiz do pendrive de instalação do Windows. O instalador o detecta automaticamente e pula praticamente todas as telas manuais.
+
+### O que o script faz
+
+* Aceita o EULA, usa a chave de ativação genérica do Windows 11 Pro e nomeia o computador como `ELIN`.
+* Cria a conta local `admin` (Administradores) e faz login automático nela na primeira inicialização.
+* Pula as telas de conta online, mantendo apenas a de rede Wi-Fi visível.
+* Remove aplicativos pré-instalados que não são usados no dia a dia: Copilot, apps do Xbox, Office Hub, OneNote, Outlook, Solitaire, Skype, Maps, People, Paint 3D, entre outros.
+* Remove recursos e capabilities do Windows: Internet Explorer, WordPad, Windows Media Player, PowerShell ISE, reconhecimento de fala/escrita, Recall, etc.
+* Aplica tema escuro com destaque azul, papel de parede próprio e um menu Iniciar/barra de tarefas limpos (sem tiles nem ícones fixados).
+* Ajusta configurações de sistema: habilita caminhos longos, desativa BitLocker automático e isolamento de núcleo (VBS/HVCI), desativa rastreamento de último acesso e sugestões/anúncios da Microsoft.
+* Instala o Visual C++ Redistributable (x64) e o Windows Terminal silenciosamente, e ativa o plano de energia "Ultimate Performance".
+* No fim do processo, remove a pasta `Windows.old`, os próprios arquivos de resposta do instalador (incluindo a senha) e qualquer link simbólico deixado no perfil, deixando o sistema pronto para uso.
+
+<Callout type="warn" title="Antes de usar">
+
+O nome do computador, o usuário `admin` e a senha já vêm definidos no arquivo. Se for reutilizar esse script, gere uma versão própria em [schneegans.de/windows/unattend-generator](https://schneegans.de/windows/unattend-generator/) com suas próprias credenciais.
+
+</Callout>
+
+<GithubCard href="https://github.com/microsoft/winget-cli" title="WinGet" description="Repositório oficial do Windows Package Manager, o WinGet, mantido pela Microsoft." owner="microsoft" repo="winget-cli" docs="https://learn.microsoft.com/pt-br/windows/package-manager/" />
+
+```shell
+winget install Microsoft.Office
+```
