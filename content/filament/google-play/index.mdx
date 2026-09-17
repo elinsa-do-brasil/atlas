@@ -1,0 +1,49 @@
+---
+title: Declarações do Google Play Console
+description: Levantamento para preencher a ficha da loja, a classificação de conteúdo e a seção de segurança dos dados do app Filament no Google Play Console.
+---
+
+Este documento reúne as informações necessárias para preencher as declarações do Google Play Console do **Filament** (`com.raave.filament`), o cliente GLPI de chamados da Elinsa. O levantamento foi feito diretamente no código-fonte do repositório `kotlin/filament`.
+
+<Callout type="warning" title="Pendência antes de qualquer submissão com revisão">
+Não foi encontrado, no app nem em URL externa, nenhum fluxo de exclusão de conta ou de dados. A política do Google Play para apps com criação de conta exige oferecer uma forma de solicitar a exclusão, seja pelo próprio app, seja por uma URL — URL essa que é exigida no formulário da seção "Segurança dos dados". Isso precisa ser resolvido antes de enviar o app a qualquer trilha (track) sujeita a revisão, incluindo o teste interno, se a política já a exigir nesse estágio.
+</Callout>
+
+## Identificação do app
+
+| Campo | Valor |
+| --- | --- |
+| Package name | `com.raave.filament` |
+| Natureza | App interno de helpdesk da Elinsa, para uso dos próprios funcionários — não é destinado ao público geral |
+| Categoria sugerida | Negócios / Produtividade |
+| Classificação de conteúdo esperada | Livre (Everyone) — sem violência, conteúdo adulto, jogo de azar ou interação social pública |
+| Direcionado a crianças | Não |
+| Anúncios | Nenhum — sem SDK de ads integrado |
+| Permissões do manifesto | Somente `android.permission.INTERNET` |
+
+## Segurança dos dados
+
+Tabela para a seção "Segurança dos dados" (Data safety) do Play Console:
+
+| Dado | Coletado? | Como é obtido | Finalidade | Compartilhado com terceiro? | Obrigatório? |
+| --- | --- | --- | --- | --- | --- |
+| E-mail | Sim | Login por código enviado ao e-mail (BetterAuth) | Autenticação e identificação da conta | Não | Sim |
+| Nome | Sim | Vem da conta BetterAuth / GLPI | Exibir quem respondeu no chamado | Não | Sim |
+| Conteúdo de chamados e mensagens | Sim | Texto digitado pelo próprio usuário | Funcionalidade principal do app (o helpdesk) | Não | Sim |
+| Arquivos anexados | Sim, opcional | Seletor do sistema (SAF, `OpenMultipleDocuments`), sem permissão de armazenamento ampla | Anexar evidência ao chamado | Não | Não |
+| Localização, contatos, ID de publicidade | Não coletado | — | — | — | — |
+
+Pontos adicionais para o formulário:
+
+- **Criptografia em trânsito:** sim. Todo o tráfego ocorre via HTTPS, contra o backend de produção (`https://backbone.rl2.me`), já testado.
+- **Uso dos dados:** limitado à funcionalidade essencial do helpdesk. Não há uso para publicidade nem perfilamento em serviços de terceiros.
+- **Analytics e crash reporting:** nenhum SDK integrado (sem Firebase Analytics ou Crashlytics no momento).
+- **Credential Manager / passkey:** o binário já inclui as dependências `androidx.credentials` e `play-services-auth` (Credential Manager / FIDO) para login por passkey. O recurso está inativo para o usuário final — confirmado que passkey ainda não deve funcionar —, mas a dependência já compõe o APK/AAB e deve ser considerada na declaração de segurança dos dados mesmo assim.
+
+## Política de privacidade
+
+A política de privacidade é de responsabilidade do solicitante do app e será providenciada separadamente; não está coberta por este levantamento.
+
+## Assinatura do app
+
+O build de release já está assinado. Caso o app entre no Play App Signing (padrão do Google), a Play Store pode gerar uma chave própria para re-assinatura, o que pode exigir a atualização do hash de certificado usado na configuração de passkey. Isso já está registrado com o time de backend — vale conferir se o hash publicado segue correspondendo à chave final de assinatura antes de habilitar o login por passkey em produção.
