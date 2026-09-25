@@ -75,6 +75,7 @@ export type DownloadableFileProps = {
   title: string;
   description: string;
   fileName?: string;
+  hardFileSize?: number;
   type?: string;
   className?: string;
 };
@@ -147,6 +148,7 @@ export async function Download({
   title,
   description,
   fileName,
+  hardFileSize,
   type,
   className,
 }: DownloadableFileProps) {
@@ -155,7 +157,7 @@ export async function Download({
   const { icon: Icon, iconClassName } = fileStyles[getFileGroup(extension)];
   const downloadName = fileName ?? fileNameFromPath(href);
   const typeLabel = type?.replace(/^[^/]+\//, "");
-  const fileSize = await getFileSize(href);
+  const fileSize = hardFileSize !== undefined ? formatFileSize(hardFileSize) : await getFileSize(href);
 
   return (
     <Card
