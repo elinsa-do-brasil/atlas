@@ -1,9 +1,9 @@
 ---
 title: Instalação padrão do Windows
-description: Passo a passo para criar o usuário local, instalar o SAP GUI e configurar a conexão com o servidor.
+description: Passo a passo da configuração padrão recomendada do Windows 11.
 ---
 
-Este tutorial cobre a instalação padrão do Windows 11: criar o PenDrive de instalação e aplicar um script que automatiza a maior parte da configuração inicial.
+import CapaExtracao from "./images/17-capa-video-extracao.png";
 
 ## 1. Criação do PenDrive de instalação
 
@@ -19,20 +19,18 @@ Este tutorial cobre a instalação padrão do Windows 11: criar o PenDrive de in
 ![Página de download da ferramenta de criação de mídia](./images/01-baixar-ferramenta.png)
 
 <Callout type="info" title="Por que usar a ferramenta de criação de mídia?">
-Embora seja possível baixar a ISO diretamente, quando usamos a ferramenta de criação de mídia é possível formatar o computador sem precisar desligar o Secure Boot.
-
-O que não é possível usando ferramentas de terceiros, como o Rufus e o Ventoy.
+Também é possível baixar a ISO e gravá-la no PenDrive com ferramentas de terceiros, como o Rufus e o Ventoy, mas nesse caso é preciso desligar o Secure Boot para formatar o computador. A mídia criada pela ferramenta da Microsoft funciona com o Secure Boot ligado.
 </Callout>
 
 2. Execute o arquivo baixado, **MediaCreationTool.exe**.
 
 ![MediaCreationTool.exe na pasta de downloads](./images/02-media-creation-tool.png)
 
-3. Leia e clique em **Aceitar** para concordar com os termos de licença.
+3. **Aceite** os termos de licença.
 
 ![Tela de termos de licença da ferramenta](./images/03-aceitar-os-termos.png)
 
-4. Selecione o idioma e a edição do Windows. Deixe a opção **Usar as opções recomendadas para este computador** desmarcada, para garantir que o **Windows 11** seja selecionado, e clique em **Avançar**.
+4. Na tela **Selecionar Idioma e edição**, desmarque **Usar as opções recomendadas para este computador**, confira se o idioma está como **português (Brasil)** e a edição como **Windows 11**, e clique em **Avançar**. Essa edição já inclui as versões Home e Pro; a escolha entre elas acontece durante a instalação.
 
 ![Seleção de idioma e edição do Windows](./images/04-selecionar-a-edicao.png)
 
@@ -50,90 +48,161 @@ Confira se selecionou o PenDrive correto: todo o conteúdo dele será apagado ne
 
 </Callout>
 
-7. Aguarde o download do Windows 11 e a criação automática da mídia de instalação. O tempo varia de acordo com a velocidade da sua internet.
+7. Aguarde o download do Windows 11 e a criação da mídia de instalação. O tempo varia de acordo com a velocidade da sua internet.
 
 ![Download do Windows 11 em andamento](./images/07-baixando-windows-11.png)
 
-8. Ao final, o PenDrive aparecerá no Explorador de Arquivos como **ESD-USB**.
+8. Ao final, o PenDrive aparecerá no Explorador de Arquivos como **ESD-USB** e estará pronto para uso.
 
-![Pendrive bootável listado no Explorador de Arquivos](./images/09-pendrive-bootavel.png)
+![PenDrive bootável listado no Explorador de Arquivos](./images/09-pendrive-bootavel.png)
 
-Neste ponto o PenDrive está pronto.
+***
 
-### Opcional: script de instalação semi-automática
+### Opcional: script de instalação semiautomática
 
-Para acelerar a instalação, é possível usar um script do tipo [autounattend.xml](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/update-windows-settings-and-scripts-create-your-own-answer-file-sxs?view=windows-11). Ele responde automaticamente às perguntas do instalador do Windows, como aceitar a licença, criar a conta etc. Com ele, o processo de instalação se torna quase totalmente automático.
+Para acelerar a instalação, é possível usar um arquivo de respostas [autounattend.xml](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/update-windows-settings-and-scripts-create-your-own-answer-file-sxs?view=windows-11). Ele responde sozinho às perguntas do instalador do Windows, como aceitar a licença e criar a conta, e torna o processo quase todo automático.
 
-Pode ser usado em conjunto com o PenDrive criado acima, bastando copiá-lo para a raiz do PenDrive. O instalador do Windows detecta o arquivo e aplica as configurações automaticamente.
+Baixe o arquivo abaixo e copie-o para a raiz do PenDrive criado acima. O instalador detecta o arquivo e aplica as configurações.
 
-<Download href="https://file.elinsadobrasil.com.br/scripts/autounattend.xml" title="autounattend.xml" description="Script de instalação semi-automática do Windows." fileName="autounattend.xml" type="XML" />
+<Download href="https://file.elinsadobrasil.com.br/scripts/autounattend.xml" title="autounattend.xml" description="Script de instalação semiautomática do Windows." fileName="autounattend.xml" type="XML" hardFileSize={37 * 1024 * 1} />
 
 ![Arquivo autounattend.xml copiado para a raiz do PenDrive](./images/10-autounattend-no-pendrive.png)
 
-<Callout type="warn" title="Antes de usar">
-O script cria umaa conta local com o username[^1] admin e deixa a senha deste usuário vazia. 
-
-Se for reutilizar esse script e queira que haja uma senha padrão para o usuário admin, acesse o [gerador](https://schneegans.de/windows/unattend-generator/)
-
-Importe o arquivo XML:
-![Tela de configuração do script de instalação semi-automática](./images/11-importar-xml.png)
-
-Após importá-lo, procure pelo campo **User accounts** e edite a senha do usuário admin.
-
-![Tela de configuração de senhas do autounattend.xml](./images/12-configurar-senha.png)
-
-Ao finalizar, procure pelo botão **Download .xml file** e baixe o arquivo atualizado. 
-
-![Baixar XML atualizado](./images/13-baixar-arquivo-xml.png)
-</Callout>
-
 <Callout type="info" title="O que o script faz">
 
-* Aceita os termos de licença do Windows, usa a chave de ativação genérica do Windows 11 Pro (apenas para a instalação, ainda será necessário ativar) e nomeia o computador como `ELIN`.
+* Aceita os termos de licença do Windows, usa a chave genérica do Windows 11 Pro (válida só para a instalação; o Windows ainda precisará ser ativado) e nomeia o computador como `ELIN`.
 
-* Cria a conta local `admin` e define uma senha.
+* Cria a conta local `admin`, sem senha.
 
-* Previne a instalação de aplicativos que não são usados no dia a dia: Copilot, apps do Xbox, Office Hub, OneNote e Outlook versão Metro (descontinuadas), Solitaire, Skype, Maps, People, Paint 3D, entre outros.
+* Impede a instalação de aplicativos que não são usados no dia a dia: Copilot, apps do Xbox, Office Hub, as versões Metro (descontinuadas) do OneNote e do Outlook, Solitaire, Skype, Maps, People, Paint 3D, entre outros.
 
-* Pula as telas de conta online, configurações de privacidade e propagandas do Xbox Game Pass e Microsoft 365, mantendo apenas a de configuração de rede.
+* Pula as telas de conta online, de configurações de privacidade e as propagandas do Xbox Game Pass e do Microsoft 365, mantendo apenas a de configuração de rede.
 
-* Remove recursos preteridos e de IA do Windows: Internet Explorer, WordPad, Windows Media Player, PowerShell ISE, reconhecimento de fala/escrita, Recall etc.
+* Remove recursos obsoletos e de IA do Windows: Internet Explorer, WordPad, Windows Media Player, PowerShell ISE, reconhecimento de fala e escrita, Recall etc.
 
-* Ajusta configurações de sistema: habilita caminhos longos, desativa BitLocker automático, desativa rastreamento de último acesso e sugestões/anúncios da Microsoft, desabilitar os Widgets e habilitar a função **Finalizar tarefa** na barra de tarefas.
+* Ajusta configurações do sistema: habilita caminhos longos; desativa o BitLocker automático, o rastreamento de último acesso, as sugestões e anúncios da Microsoft e os Widgets; e habilita a função **Finalizar tarefa** na barra de tarefas.
 
-* Instala o Visual C++ Redistributable (x64) e o Windows Terminal silenciosamente, e ativa o plano de energia "Desempenho".
+* Instala silenciosamente o Visual C++ Redistributable (x64) e o Windows Terminal, e ativa o plano de energia **Desempenho**.
 
-* Aplica o tema escuro com destaque azul, define um [papel de parede personalizado](https://images.pexels.com/photos/16530781/pexels-photo-16530781.jpeg) (pode não ser aplicado em alguns computadores), adiciona como pastas fixadas no menu Iniciar as Configurações, Downloads e Documentos, e move a barra de tarefas para o lado esquerdo.
+* Aplica o tema escuro com destaque azul, define um [papel de parede personalizado](https://images.pexels.com/photos/16530781/pexels-photo-16530781.jpeg) (pode não ser aplicado em alguns computadores), fixa as pastas Configurações, Downloads e Documentos no menu Iniciar e move a barra de tarefas para o lado esquerdo.
 
-* No fim do processo, remove a pasta `Windows.old`, os arquivos de resposta do instalador (incluindo a senha) e qualquer link simbólico deixado no perfil. O sistema fica pronto para uso.
+* No fim do processo, remove a pasta `Windows.old`, os arquivos de resposta do instalador e qualquer link simbólico deixado no perfil. O sistema fica pronto para uso.
+
 </Callout>
+
+<Callout type="warn" title="Antes de usar">
+O script cria a conta local com o *username*[^1] `admin` e deixa a senha em branco. Se quiser definir uma senha padrão, edite o arquivo no [gerador de autounattend.xml](https://schneegans.de/windows/unattend-generator/):
+
+1. Importe o arquivo XML.
+
+![Importação do XML no gerador](./images/11-importar-xml.png)
+
+2. No campo **User accounts**, edite a senha do usuário `admin`.
+
+![Campo de senha do usuário admin no gerador](./images/12-configurar-senha.png)
+
+3. Clique em **Download .xml file** para baixar o arquivo atualizado.
+
+![Botão para baixar o XML atualizado](./images/13-baixar-arquivo-xml.png)
+</Callout>
+
+## 2. Instalação do Windows
+
+Conecte o PenDrive ao computador, inicie-o pelo PenDrive e siga as telas do instalador. Se o `autounattend.xml` estiver no PenDrive, a maior parte delas será respondida automaticamente.
+
+### Problema conhecido: o instalador não reconhece o SSD
+
+Em alguns computadores, principalmente com processadores Intel a partir da 11ª geração, a tela **Selecione o local para instalar o Windows 11** lista apenas o PenDrive, mesmo com o SSD aparecendo normalmente na BIOS.
+
+![Tela de instalação do Windows sem o SSD](./images/14-sem-disco.png)
+
+A causa é o **Intel VMD** (*Volume Management Device*), um controlador de armazenamento embutido no processador, usado para RAID e para o Intel Rapid Storage Technology (RST). Com o VMD ativado na BIOS, o SSD NVMe passa a ser acessado por meio dele, mas a imagem de instalação do Windows **não traz o driver do VMD**. Sem o driver, o instalador não enxerga o disco.
+
+Há duas formas de resolver.
+
+#### Opção A: carregar o driver do VMD durante a instalação
+
+É a opção mais segura, pois não altera a BIOS.
+
+1. No site de suporte do fabricante, busque pelo modelo exato do computador e baixe o driver **Intel Rapid Storage Technology**. Evite a versão genérica do site da Intel, que pode não ser compatível com o hardware.
+
+<Callout type="info" title="Fabricantes que usamos na Elinsa">
+* [Acer](https://www.acer.com/br-pt/support/drivers-and-manuals)
+* [Dell](https://www.dell.com/support/home/pt-br)
+* [Vaio](https://www.br.vaio.com/drivers)
+
+O driver costuma ficar na seção **Chipset** ou **Storage**, como neste exemplo da Dell:
+
+![Exemplo de driver Intel RST VMD](./images/15-driver-intel-rst.png)
+</Callout>
+
+2. Execute o arquivo baixado e escolha **extrair** os arquivos, sem instalar. Copie a pasta extraída para a raiz do PenDrive. O vídeo abaixo mostra o processo com o pacote da Dell; em outros fabricantes, as telas podem mudar.
+
+<VideoEmbed
+  src="https://file.elinsadobrasil.com.br/videos/docs/extracao-do-driver-rst.mp4" 
+  title="Extração do driver Intel Rapid Storage Technology"
+  description="No pacote da Dell, marque Extract files to this PC to install later, clique em Continue e escolha a pasta de destino. Ao final, a pasta VMD aparece entre os arquivos extraídos."
+  poster={CapaExtracao}
+/>
+
+3. De volta ao instalador, na tela de seleção do disco, clique em **Carregar Driver** e depois em **Procurar**.
+
+![Carregar Driver no instalador do Windows](./images/18-carregar-driver.png)
+
+4. Selecione a pasta extraída e clique em **OK**. Na lista que aparece, escolha o **Intel RST VMD Controller** e clique em **Instalar**.
+
+![Seleção da pasta do driver](./images/19-pasta-do-driver.png)
+
+![Intel RST VMD Controller selecionado na lista de drivers](./images/20-driver.png)
+
+<Callout type="info">
+O código no fim do nome do driver varia de acordo com o modelo do computador.
+</Callout>
+
+5. O SSD passará a aparecer na lista.
+
+![SSD listado no instalador do Windows](./images/21-ssd-listado.png)
+
+#### Opção B: desativar o VMD na BIOS
+
+Essa alternativa dispensa o driver. O caminho e o nome da opção variam conforme o fabricante e o modelo, então consulte a documentação de suporte do computador.
+
+Para o usuário final não há diferença perceptível: o Windows funciona da mesma forma com o VMD ativado ou desativado.
+
+<Callout type="warn" title="Decida antes de instalar">
+Não altere essa configuração depois que o Windows estiver instalado: o sistema deixará de iniciar e mostrará uma tela azul ou preta com o erro **INACCESSIBLE_BOOT_DEVICE**.
+</Callout>
+
+***
+
+Com o SSD listado, selecione-o e prossiga com a instalação, respondendo às telas que o instalador apresentar.
 
 ## 3. Instalar aplicativos padrão com o WinGet
 
-Depois que o Windows terminar de instalar, use o WinGet para instalar rapidamente os aplicativos que faltam, como o pacote Office.
+Com o Windows instalado, use o WinGet para instalar rapidamente os aplicativos que faltam, como o pacote Office. Os comandos abaixo são executados no **Terminal**.
 
 <GithubCard href="https://github.com/microsoft/winget-cli" title="WinGet" description="Repositório oficial do Windows Package Manager, o WinGet, mantido pela Microsoft." owner="microsoft" repo="winget-cli" docs="https://learn.microsoft.com/pt-br/windows/package-manager/" />
 
 ```shell
-# Instala o Microsoft 365 mais recente e na idioma do sistema:
+# Instala a versão mais recente do Microsoft 365, no idioma do sistema:
 
 winget install Microsoft.Office
 ```
 
 <Callout type="info" title="Observação">
-Por vezes, o WinGet não consegue instalar o Microsoft 365 por conta do hash do pacote cadastrado no WinGet não bater com o hash do pacote baixado. Nesse caso, em um Terminal com privilégios de administrador, execute o comando: 
+Às vezes o WinGet não consegue instalar o Microsoft 365 porque o hash cadastrado no WinGet não bate com o do pacote baixado. Nesse caso, abra o Terminal como administrador e execute:
 
 ```shell
 winget settings --enable InstallerHashOverride
 ```
 
-Depois feche o Terminal e abra-o novamente, desta vez sem privilégios de administrador, e execute o comando:
+Depois, feche o Terminal, abra-o novamente sem privilégios de administrador e execute:
 
 ```shell
 winget install -e --id Microsoft.Office --ignore-security-hash
 ```
 
-Embora o comando acima ignore a verificação de hash, ele ainda verifica a assinatura digital do pacote baixado, garantindo que o pacote seja legítimo.
+Esse comando ignora apenas a conferência do hash: a assinatura digital do pacote continua sendo verificada, o que garante que ele é legítimo.
 </Callout>
 
 ```shell
@@ -154,13 +223,12 @@ winget install Google.EarthPro
 winget install Telegram.TelegramDesktop
 ```
 
-Para mais códigos de instalação  com o WinGet, consulte o [repositório winstall](https://winstall.app) ou use o comando 
+Para encontrar o identificador de outros aplicativos, consulte o site [winstall](https://winstall.app) ou use o comando:
 
 ```shell
-winget search "nome do aplicativo" 
+winget search "nome do aplicativo"
 
-# por exemplo: winget search "Google Chrome"
+# Por exemplo: winget search "Google Chrome"
 ```
 
-
-[^1]: Neste contexto, o *username* é o que aparece na pasta C:/Users/**admin** e que é usado para login local quando o computador está no domínio Active Directory, isto é, ` .\admin`.
+[^1]: Neste contexto, *username* é o nome que aparece na pasta `C:\Users\admin` e que é usado para fazer login na conta local quando o computador está em um domínio do Active Directory, isto é, `.\admin`.
