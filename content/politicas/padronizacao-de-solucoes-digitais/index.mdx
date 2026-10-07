@@ -1,0 +1,232 @@
+---
+title: Política de padronização de soluções digitais
+description: Critérios para que sistemas, scripts, integrações e automações da Elinsa sejam seguros, documentados e mantidos pela empresa.
+---
+
+Padronização é o conjunto de critérios que a Elinsa usa para transformar ideias digitais em soluções seguras, documentadas e mantidas pela empresa.
+
+Muitas melhorias na empresa começam com quem conhece a rotina de perto. Um colaborador percebe uma atividade repetitiva, imagina uma forma melhor de trabalhar e cria uma planilha estruturada, um script, um painel, uma integração ou até um pequeno sistema. Depois de testar a ideia, ele apresenta a solução para a empresa ou para o próprio setor.
+
+Quando uma dessas ideias começa a ser usada por outras pessoas ou por um setor inteiro, ela muda de natureza: deixa de ser apenas uma solução individual e passa a fazer parte da rotina da empresa. É nesse momento que a padronização ajuda. Com critérios claros, a Elinsa consegue apoiar o desenvolvimento, revisar a segurança, corrigir bugs, evoluir funcionalidades e manter a solução funcionando ao longo do tempo.
+
+O objetivo não é limitar ideias ou desestimular quem propõe melhorias. A regra existe para que uma ferramenta útil não fique presa a uma pessoa, a uma conta pessoal, a uma licença restritiva, a uma tecnologia fechada sem alternativa de manutenção ou a um fornecedor difícil de substituir.
+
+<Callout type="info">
+  Todo sistema, script, integração ou código criado por colaboradores e oferecido à Elinsa deve ter o código-fonte[^codigo-fonte] e a documentação sob controle da empresa, preferencialmente na organização oficial da [Elinsa no GitHub](https://github.com/elinsa-do-brasil).
+</Callout>
+
+Todo material técnico ou código interno que possa ser usado por uma área da empresa deve passar por revisão da TI antes de entrar em produção[^producao]. Essa revisão confirma segurança, continuidade, licenças, dados envolvidos e forma correta de implantação.
+
+---
+
+## Por que padronizamos
+
+A principal razão é segurança e proteção de dados. Uma solução criada fora dos padrões da empresa pode tratar dados pessoais sem o cuidado exigido pela LGPD[^lgpd], guardar informações sensíveis em locais inadequados, deixar dados _hardcoded_[^hardcoded] no código, usar tokens[^token] pessoais, expor dados em planilhas, depender de contas particulares ou não ter controle claro de quem pode acessar o quê.
+
+Mesmo quando a intenção é boa, esse tipo de improviso aumenta o risco de vazamento de informações. Um incidente envolvendo dados de clientes, colaboradores, fornecedores ou parceiros pode afetar a confiança na empresa, gerar custos de correção e resposta, causar impacto financeiro e criar riscos regulatórios relacionados à LGPD.
+
+Outra razão é continuidade. Sistemas corporativos precisam continuar funcionando mesmo quando uma pessoa muda de área, sai da empresa, é desligada, troca de fornecedor ou deixa de manter um projeto. Quando o código, as credenciais ou a documentação ficam com uma única pessoa, a empresa passa a depender de acesso individual, boa vontade ou memória informal.
+
+Padronizar reduz esses riscos. Também facilita revisão técnica, segurança da informação, manutenção, treinamento de novas pessoas, auditoria de mudanças e reaproveitamento de componentes entre projetos.
+
+A padronização protege quatro pontos:
+
+| Ponto protegido | O que isso evita |
+|---|---|
+| **Segurança** | Vazamento de informações, descumprimento da LGPD, credenciais pessoais, dados sensíveis ou permissões administrativas sem controle corporativo. |
+| **Continuidade** | Soluções pararem porque só uma pessoa tinha acesso ao código, à conta ou à implantação. |
+| **Propriedade e uso** | Dúvidas sobre quem pode usar, alterar, distribuir ou manter o software. |
+| **Manutenção** | Projetos com tecnologias, dependências ou processos que ninguém mais consegue operar. |
+
+---
+
+## Quando uma solução é oferecida à empresa
+
+Colaboradores podem criar planilhas estruturadas, scripts, pequenos sistemas, integrações, painéis ou agentes de IA para resolver problemas reais do trabalho. Essas iniciativas são bem-vindas. Para que sejam incorporadas à rotina da empresa, porém, precisam poder ser mantidas pela própria Elinsa.
+
+A solução precisa deixar de depender do controle individual de quem a criou. A Elinsa deve conseguir acessar, revisar, executar, atualizar, corrigir e, se necessário, substituir a solução sem depender de autorização pessoal futura.
+
+<Callout type="warn">
+  Uma solução útil não deve virar risco operacional. Antes de entrar no fluxo oficial da empresa, ela precisa ter código, acesso, licença e documentação transferíveis.
+</Callout>
+
+---
+
+## Open source como preferência
+
+Soluções oferecidas à Elinsa devem ser baseadas preferencialmente em código open source.
+
+Open source[^open-source], ou código aberto, é um modelo em que o código de uma tecnologia pode ser lido, estudado, revisado e, dependendo da licença[^licenca], adaptado por outras pessoas. Com isso, a empresa consegue entender melhor o que está usando, verificar a licença, acompanhar correções de segurança e trocar de fornecedor ou equipe sem ficar presa a uma caixa-preta.
+
+Isso não significa que o código interno da Elinsa precise ser público. Também não significa que qualquer pessoa de fora possa alterar os sistemas da empresa. O código do projeto, os dados, as credenciais, os ambientes e as permissões continuam sob controle da Elinsa. A preferência por open source vale para a base técnica e para as bibliotecas[^biblioteca] usadas, não para expor informações internas.
+
+Preferir open source permite que a empresa:
+
+- revise como uma biblioteca funciona antes de colocá-la em produção;
+- corrija ou substitua partes da solução quando necessário;
+- evite dependência excessiva de um único fornecedor;
+- aproveite conhecimento da comunidade técnica;
+- reduza risco de licenças obscuras, custos inesperados ou bloqueio de acesso.
+
+Open source também não é sinônimo de insegurança. Um sistema não é seguro apenas porque o código é fechado, e não é inseguro apenas porque o código pode ser lido. A segurança depende de como a tecnologia é escolhida, atualizada, configurada, revisada e operada.
+
+Em muitos casos, o código aberto permite auditoria, revisão por comunidades técnicas, correção pública de falhas e maior transparência sobre o funcionamento da ferramenta. Ainda assim, open source precisa ser usado com critério. Não basta encontrar um trecho na internet: é necessário confirmar a licença, a origem, a manutenção do projeto, a frequência de atualizações e a compatibilidade com uso corporativo.
+
+Quando uma solução depender de software proprietário, serviço fechado ou componente sem acesso ao código-fonte, essa dependência deve ser explícita na documentação. A equipe precisa saber quais partes não podem ser auditadas, exportadas, corrigidas internamente ou substituídas com facilidade.
+
+| Ideia comum | Como entendemos na Elinsa |
+|---|---|
+| "Open source deixa tudo público." | Não. O que pode ser público é o código da tecnologia usada. O código interno, dados, segredos e ambientes da Elinsa continuam privados. |
+| "Open source é menos seguro." | Não necessariamente. Segurança depende de revisão, atualização, configuração, permissões e boas práticas. Código fechado também pode ter falhas. |
+| "Posso usar qualquer código aberto." | Não. É preciso verificar licença, origem, manutenção, riscos e compatibilidade com uso corporativo. |
+| "Software proprietário é proibido." | Não. Pode ser usado quando fizer sentido, mas a dependência precisa ser justificada e documentada. |
+
+---
+
+## Requisitos obrigatórios
+
+Todo sistema, script, integração ou código oferecido à Elinsa deve atender aos requisitos abaixo.
+
+### 1. Código-fonte sob controle da empresa
+
+O repositório[^repositorio] principal deve ficar na organização da Elinsa no GitHub: [elinsa-do-brasil](https://github.com/elinsa-do-brasil) - ou em outro ambiente corporativo aprovado. Não use contas pessoais como fonte oficial do projeto.
+
+Isso inclui:
+
+- código da aplicação;
+- scripts de apoio;
+- definições de infraestrutura;
+- fluxos de integração com outras ferramentas;
+- estrutura do banco de dados;
+- instruções de instalação, operação e manutenção.
+
+Contas individuais podem aparecer no histórico de commits, mas a empresa deve controlar o repositório, as permissões, os ambientes e a continuidade do projeto.
+
+### 2. Nenhuma dependência de propriedade individual
+
+Um projeto não deve depender de uma pessoa como dona do código, da conta, da licença, do domínio, do banco de dados, da integração ou da chave de API.
+
+Evite especialmente:
+
+- repositórios em GitHub pessoal;
+- integrações em contas pessoais de ferramentas como planilhas, agendas ou plataformas externas;
+- tokens pessoais usados em produção;
+- bancos de dados ou buckets criados em contas individuais;
+- documentação armazenada apenas em chats, arquivos locais ou drives pessoais;
+- bibliotecas, trechos de código, templates ou componentes cujo uso dependa de autorização particular do autor.
+
+Se um colaborador criou a solução por iniciativa própria e deseja oferecê-la à empresa, os direitos de uso, manutenção e continuidade precisam estar claros antes da adoção. A empresa não deve assumir dependência de um ativo que continue juridicamente ou tecnicamente preso ao autor original.
+
+### 3. Segurança e dados protegidos
+
+Antes de uma solução ser adotada, é preciso entender quais dados ela acessa, onde esses dados ficam armazenados, quem tem permissão de uso e quais integrações externas participam do fluxo. Se houver tratamento de dados pessoais ou dados pessoais sensíveis, a solução também precisa considerar os princípios e obrigações da LGPD.
+
+Não é permitido manter informações sensíveis, tokens, senhas, chaves de API[^chave-api] ou dados de clientes, colaboradores e fornecedores em arquivos locais, planilhas pessoais, prompts de IA, chats, código-fonte, variáveis salvas junto com o código ou ferramentas sem controle corporativo.
+
+Toda solução deve seguir estas regras mínimas:
+
+- usar contas, ambientes e permissões controladas pela empresa;
+- separar credenciais[^credencial] do código-fonte;
+- não armazenar dados pessoais, dados sensíveis ou segredos hardcoded;
+- registrar apenas os dados necessários para a finalidade da solução;
+- evitar exposição de informações sensíveis em logs[^logs], relatórios ou telas compartilhadas;
+- enviar o material para revisão da TI antes de entrar em uso por uma área ou setor.
+
+### 4. Licenças e validação pela TI
+
+Nem todo código encontrado na internet, em templates, em ferramentas de IA ou em projetos de terceiros pode ser usado livremente por empresas. Alguns materiais têm licenças que limitam uso comercial, alteração, distribuição ou manutenção.
+
+Por isso, a pessoa que criou ou encontrou a solução não precisa validar isso sozinha. Antes de incorporar bibliotecas, trechos de código, templates, plugins, componentes ou exemplos externos, envie o material para a TI revisar.
+
+A TI vai verificar se a licença permite uso corporativo, se existem restrições importantes, se há risco de dependência de terceiros e se a solução pode ser mantida pela Elinsa. Quando necessário, a TI também pode envolver outras áreas para validação jurídica ou contratual.
+
+Não incorpore código com licença restritiva, incerta ou sem licença clara sem aprovação da TI. Se o código não informa uma licença, trate como **não autorizado para uso** até que haja confirmação formal.
+
+Também não é permitido usar código de um colaborador, fornecedor ou terceiro de forma que a Elinsa dependa de permissão individual futura para manter, alterar ou distribuir o sistema.
+
+Na dúvida sobre a licença de uma dependência, biblioteca ou exemplo externo, envie o material para a TI antes de usar.
+
+### 5. Código criado com apoio de IA também precisa seguir as regras
+
+Assistentes de IA podem ajudar a criar, revisar e explicar código, mas o resultado continua sendo responsabilidade de quem oferece a solução e da área que decide adotá-la.
+
+Todo código gerado com IA deve:
+
+- ser revisado por uma pessoa responsável;
+- ser salvo no repositório corporativo;
+- respeitar as licenças das bibliotecas e exemplos usados;
+- evitar cópia de trechos proprietários ou sem origem confiável;
+- não incluir dados pessoais, segredos, credenciais ou informações confidenciais nos prompts;
+- ser testável, documentado e mantido pela equipe, não apenas pela pessoa que gerou o prompt.
+
+Antes de entrar em produção, código criado com apoio de IA também precisa ser submetido à aprovação da TI.
+
+Um prompt ou uma conversa com IA não substitui documentação técnica. Se a solução depende de uma lógica importante, essa lógica precisa estar descrita em arquivos versionados.
+
+---
+
+## Documentação mínima
+
+Antes de uma solução entrar em uso, o repositório deve responder às perguntas principais para qualquer pessoa técnica que precise assumir o projeto:
+
+| Pergunta | Onde documentar |
+|---|---|
+| Para que a solução existe? | `README.md` ou documentação do produto. |
+| Como rodar localmente? | `README.md`, scripts e variáveis de ambiente de exemplo. |
+| Como publicar ou atualizar? | Guia de publicação, atualização e responsáveis pelo processo. |
+| Onde ficam os dados? | Desenho de arquitetura, estrutura dos dados e política de backup. |
+| Quais serviços externos usa? | Lista de integrações, donos corporativos e permissões. |
+| Há tratamento de dados pessoais? | Finalidade, necessidade, base de acesso e cuidados exigidos pela LGPD. |
+| Como dados sensíveis são protegidos? | Controle de acesso, armazenamento, logs, variáveis de ambiente e revisão de segurança. |
+| Quais licenças são usadas? | Arquivo de licenças e lista das dependências usadas no projeto. |
+| Há dependências proprietárias? | Justificativa, riscos, contrato, custos e alternativas de substituição. |
+| Quais riscos existem? | Notas de segurança, privacidade e limitações conhecidas. |
+
+Documentação curta e atualizada vale mais do que documentação longa e abandonada. O importante é que a empresa consiga operar, auditar e evoluir a solução sem depender de uma única pessoa.
+
+---
+
+## Checklist de aprovação
+
+Use esta lista antes de colocar um novo sistema, script ou integração em produção:
+
+- [ ] A solução foi submetida à revisão e aprovação da TI antes de entrar em produção.
+- [ ] O código-fonte está na organização da Elinsa no GitHub ou em ambiente corporativo aprovado.
+- [ ] O repositório contém instruções para instalar, rodar, testar e publicar.
+- [ ] Nenhuma conta pessoal é dona da infraestrutura, banco, integração, domínio ou chave crítica.
+- [ ] Dados sensíveis e permissões de acesso foram revisados antes da adoção.
+- [ ] O tratamento de dados pessoais foi avaliado conforme a LGPD quando aplicável.
+- [ ] Segredos, tokens e credenciais estão fora do código-fonte.
+- [ ] Dependências de terceiros têm licenças compatíveis com uso corporativo.
+- [ ] A base técnica usa preferencialmente tecnologias e bibliotecas open source.
+- [ ] Dependências proprietárias ou fechadas estão justificadas e documentadas.
+- [ ] Código criado com apoio de IA foi revisado, versionado e documentado.
+- [ ] A escolha tecnológica segue uma padronização existente ou possui justificativa documentada.
+- [ ] Há responsável técnico ou equipe definida para manutenção.
+- [ ] O projeto pode ser transferido para outra pessoa sem perda de acesso ou conhecimento essencial.
+
+Se algum item não puder ser marcado, o projeto ainda não está pronto para ser tratado como solução corporativa.
+
+[^codigo-fonte]: Código-fonte é o conjunto de arquivos e instruções que faz uma solução funcionar. É como a "receita" do sistema: sem ele, a empresa pode até usar a ferramenta, mas não consegue entender, corrigir ou evoluir com segurança.
+
+[^producao]: Produção é quando uma solução deixa de ser teste e passa a ser usada de verdade por uma área, equipe, cliente, fornecedor ou processo da empresa.
+
+[^lgpd]: LGPD é a Lei Geral de Proteção de Dados. Ela define cuidados para coleta, uso, armazenamento, compartilhamento e proteção de dados pessoais no Brasil.
+
+[^hardcoded]: Hardcoded significa deixar uma informação gravada diretamente no código, como uma senha, token, chave, e-mail interno ou dado sensível. Isso é perigoso porque a informação pode ficar visível para quem acessar ou inspecionar o código.
+
+[^token]: Token é um tipo de chave de acesso usada por sistemas para se conectar a contas, APIs ou serviços. Se um token vaza, alguém pode conseguir acessar recursos como se fosse a pessoa ou sistema autorizado.
+
+[^open-source]: Open source significa código aberto. A tecnologia pode ser examinada publicamente, mas isso não torna públicos os dados, senhas, ambientes ou códigos internos da Elinsa.
+
+[^licenca]: Licença é o conjunto de regras que diz como um código, biblioteca, template ou ferramenta pode ser usado. Algumas permitem uso comercial; outras restringem cópia, alteração ou distribuição.
+
+[^repositorio]: Repositório é o local onde o código e o histórico de alterações ficam armazenados. No caso da Elinsa, a preferência é usar a organização corporativa no GitHub.
+
+[^chave-api]: Chave de API é uma credencial usada para permitir que um sistema converse com outro serviço. Deve ser tratada como segredo, do mesmo jeito que uma senha.
+
+[^credencial]: Credencial é qualquer informação usada para provar acesso a uma conta, sistema ou serviço, como senha, token, chave de API ou certificado.
+
+[^logs]: Logs são registros técnicos gerados por sistemas para indicar o que aconteceu, como erros, acessos e operações. Eles ajudam na investigação de problemas, mas não devem expor dados sensíveis.
+
+[^biblioteca]: Biblioteca é um conjunto de código pronto que resolve uma parte do problema, como enviar e-mails, validar formulários, montar telas ou conversar com outro sistema. Usar bibliotecas evita refazer tudo do zero, mas elas também precisam ser revisadas pela TI.
